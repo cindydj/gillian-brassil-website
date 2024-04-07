@@ -1,6 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { useState } from 'react';
-import ActionButton, { ActionButtonProps, ButtonState } from '../ActionButton/ActionButton';
+import ActionButton, {
+    ActionButtonProps,
+    ButtonState,
+} from '../ActionButton/ActionButton';
 import { css, useTheme } from '@emotion/react';
 import DropdownMenuItem from './DropdownMenuItem';
 import { ReactComponent as ArrowDropdownIcon } from '../../assets/icons/arrow_drop_down.svg';
@@ -60,7 +63,15 @@ const CSS_BUTTON_TEXT = css({
  */
 function DropdownMenu(props: DropdownMenuProps) {
     // TODO: Detect clicks outside of dropdown menu to close menu (+ escape key).
-    const { buttonProps, menuItems, selectedItem, label, opensLeft, opensOnHover, width } = props;
+    const {
+        buttonProps,
+        menuItems,
+        selectedItem,
+        label,
+        opensLeft,
+        opensOnHover,
+        width,
+    } = props;
     const { text, buttonStateOverride, ...otherButtonProps } = buttonProps;
     const [isOpen, setIsOpen] = useState(false);
     const theme = useTheme();
@@ -105,7 +116,8 @@ function DropdownMenu(props: DropdownMenuProps) {
                 <ActionButton
                     {...otherButtonProps}
                     buttonStateOverride={
-                        buttonStateOverride || (isOpen ? ButtonState.HOVERED : ButtonState.DEFAULT)
+                        buttonStateOverride ||
+                        (isOpen ? ButtonState.HOVERED : ButtonState.DEFAULT)
                     }
                     onClick={() => {
                         if (!opensOnHover) {
@@ -115,7 +127,9 @@ function DropdownMenu(props: DropdownMenuProps) {
                 >
                     <div css={CSS_BUTTON_CONTENT}>
                         <div css={CSS_BUTTON_TEXT}>{text}</div>
-                        {!opensOnHover && <ArrowDropdownIcon width="24px" height="24px" />}
+                        {!opensOnHover && (
+                            <ArrowDropdownIcon width="24px" height="24px" />
+                        )}
                     </div>
                 </ActionButton>
             </div>
@@ -123,7 +137,15 @@ function DropdownMenu(props: DropdownMenuProps) {
                 <div css={cssDropdownMenuContent}>
                     <div css={cssMenuItemWrapper}>
                         {Object.entries(menuItems).map(
-                            ([menuItem, { link, onClick, isDisabled, customMenuItemContent }]) => {
+                            ([
+                                menuItem,
+                                {
+                                    link,
+                                    onClick,
+                                    isDisabled,
+                                    customMenuItemContent,
+                                },
+                            ]) => {
                                 return (
                                     <DropdownMenuItem
                                         key={menuItem}

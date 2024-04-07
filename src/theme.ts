@@ -100,4 +100,4 @@ export const THEME = {
         header: 'Oswald',
         text: 'Quicksand',
     },
-}
+};

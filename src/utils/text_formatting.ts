@@ -1,4 +1,7 @@
-import { ScreenSize, isLargerThanOrEqual } from '../hooks/useScreenSizeBreakpoints';
+import {
+    ScreenSize,
+    isLargerThanOrEqual,
+} from '../hooks/useScreenSizeBreakpoints';
 
 // Characters that error when put directly in Javascript.
 // By importing them instead, the error is avoided.
@@ -11,7 +14,12 @@ export function getCtrlOrCmd() {
     return window.navigator.userAgent.indexOf('Mac') !== -1 ? 'Cmd' : 'Ctrl';
 }
 
-export function getBoldFontWeight(screenSize: ScreenSize, isExtraBold?: boolean) {
+export function getBoldFontWeight(
+    screenSize: ScreenSize,
+    isExtraBold?: boolean,
+) {
     const boldFontWeight = isExtraBold ? 700 : 600;
-    return isLargerThanOrEqual(screenSize, ScreenSize.MEDIUM) ? boldFontWeight : 550;
+    return isLargerThanOrEqual(screenSize, ScreenSize.MEDIUM)
+        ? boldFontWeight
+        : 550;
 }

@@ -30,7 +30,10 @@ interface PageLayoutProps {
 function PageLayout(props: PageLayoutProps) {
     const { children, maxWidth } = props;
     const screenSize = useScreenSizeBreakpoints();
-    const useMinimalPadding = isSmallerThanOrEqual(screenSize, ScreenSize.MEDIUM);
+    const useMinimalPadding = isSmallerThanOrEqual(
+        screenSize,
+        ScreenSize.MEDIUM,
+    );
 
     const cssPageContent = css({
         display: 'flex',

@@ -8,7 +8,10 @@ export enum ScreenSize {
     XLARGE = 'xlarge',
 }
 
-export function isSmallerThanOrEqual(screenSize1: ScreenSize, screenSize2: ScreenSize) {
+export function isSmallerThanOrEqual(
+    screenSize1: ScreenSize,
+    screenSize2: ScreenSize,
+) {
     const screenSizeOrdering = Object.values(ScreenSize);
     return (
         screenSizeOrdering.findIndex((x) => x === screenSize1) <=
@@ -16,7 +19,10 @@ export function isSmallerThanOrEqual(screenSize1: ScreenSize, screenSize2: Scree
     );
 }
 
-export function isLargerThanOrEqual(screenSize1: ScreenSize, screenSize2: ScreenSize) {
+export function isLargerThanOrEqual(
+    screenSize1: ScreenSize,
+    screenSize2: ScreenSize,
+) {
     const screenSizeOrdering = Object.values(ScreenSize);
     return (
         screenSizeOrdering.findIndex((x) => x === screenSize1) >=

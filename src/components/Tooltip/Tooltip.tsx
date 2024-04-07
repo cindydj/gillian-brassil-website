@@ -42,9 +42,14 @@ function Tooltip(props: TooltipProps) {
     const { children, tooltip, overrideShow } = props;
     return (
         <div css={CSS_TOOLTIP_WRAPPER}>
-            <div css={overrideShow ? undefined : CSS_TOOLTIP_TRIGGER}>{children}</div>
+            <div css={overrideShow ? undefined : CSS_TOOLTIP_TRIGGER}>
+                {children}
+            </div>
             <div
-                css={[CSS_TOOLTIP, { visibility: overrideShow ? 'visible' : 'hidden' }]}
+                css={[
+                    CSS_TOOLTIP,
+                    { visibility: overrideShow ? 'visible' : 'hidden' },
+                ]}
                 className="tooltip"
             >
                 {tooltip}

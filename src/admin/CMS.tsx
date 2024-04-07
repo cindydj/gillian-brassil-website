@@ -1,4 +1,4 @@
-import CMS from "decap-cms-app";
+import CMS from 'decap-cms-app';
 // Initialize the CMS object
 CMS.init({
     config: {
@@ -16,20 +16,25 @@ CMS.init({
                 create: true,
                 slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
                 fields: [
-                    { label: "Title", name: "title", widget: "string" },
-                    { label: "Publish Date", name: "date", widget: "datetime" },
-                    { label: "Featured Image", name: "thumbnail", widget: "image" },
-                    { label: "Rating (scale of 1-5)", name: "rating", widget: "number" },
-                    { label: "Body", name: "body", widget: "markdown" },
+                    { label: 'Title', name: 'title', widget: 'string' },
+                    { label: 'Publish Date', name: 'date', widget: 'datetime' },
+                    {
+                        label: 'Featured Image',
+                        name: 'thumbnail',
+                        widget: 'image',
+                    },
+                    {
+                        label: 'Rating (scale of 1-5)',
+                        name: 'rating',
+                        widget: 'number',
+                    },
+                    { label: 'Body', name: 'body', widget: 'markdown' },
                 ],
-            }
+            },
         ],
     },
 });
 
 export function Component() {
-    return (
-        <>
-        </>
-    );
+    return <></>;
 }

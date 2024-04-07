@@ -56,7 +56,12 @@ function Table(props: TableProps) {
             <table css={cssTable}>
                 <colgroup>
                     {columns.map(({ columnName, widthPercentage }) => {
-                        return <col key={columnName} css={{ width: widthPercentage }} />;
+                        return (
+                            <col
+                                key={columnName}
+                                css={{ width: widthPercentage }}
+                            />
+                        );
                     })}
                 </colgroup>
                 <thead css={cssTableHeader}>
@@ -71,7 +76,11 @@ function Table(props: TableProps) {
                         return (
                             <tr
                                 key={index}
-                                css={index === emphasizedRowIndex ? cssHighlightedRow : {}}
+                                css={
+                                    index === emphasizedRowIndex
+                                        ? cssHighlightedRow
+                                        : {}
+                                }
                             >
                                 {columns.map(({ columnName }) => {
                                     if (!rowData[columnName]) {
@@ -79,7 +88,11 @@ function Table(props: TableProps) {
                                             `The Table "data" prop is malformed and column ${columnName} could not be found. Please use the column names as keys for each entry.`,
                                         );
                                     }
-                                    return <td key={columnName}>{rowData[columnName]}</td>;
+                                    return (
+                                        <td key={columnName}>
+                                            {rowData[columnName]}
+                                        </td>
+                                    );
                                 })}
                             </tr>
                         );

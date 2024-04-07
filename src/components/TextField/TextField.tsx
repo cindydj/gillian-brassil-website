@@ -33,8 +33,16 @@ interface TextFieldProps {
 }
 
 function TextField(props: TextFieldProps) {
-    const { value, setValue, label, width, isPassword, description, placeholder, errorMessage } =
-        props;
+    const {
+        value,
+        setValue,
+        label,
+        width,
+        isPassword,
+        description,
+        placeholder,
+        errorMessage,
+    } = props;
     const screenSize = useScreenSizeBreakpoints();
     const theme = useTheme();
 

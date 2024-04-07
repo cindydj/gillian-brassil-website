@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { css, useTheme } from "@emotion/react";
-import { useState } from "react";
+import { css, useTheme } from '@emotion/react';
+import { useState } from 'react';
 
 import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg';
-import ActionButton, { ButtonType } from "../../components/ActionButton/ActionButton";
-import NavigationOptions from "./NavigationOptions";
+import ActionButton, {
+    ButtonType,
+} from '../../components/ActionButton/ActionButton';
+import NavigationOptions from './NavigationOptions';
 
 const CSS_HOME_NAVIGATION_WRAPPER = css({
     flex: 1,

@@ -32,7 +32,9 @@ function DropdownMenuItem(props: DropdownMenuItemProps) {
 
     const menuItemType = menuItemTypeInput ?? MenuItemType.WHITE_BACKGROUND;
     const textColor =
-        theme.colors.button[`${menuItemType}_${isSelected ? 'selected' : 'base'}_text_color`];
+        theme.colors.button[
+            `${menuItemType}_${isSelected ? 'selected' : 'base'}_text_color`
+        ];
     const cssMenuItem = css({
         backgroundColor:
             theme.colors.button[

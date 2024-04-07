@@ -71,9 +71,15 @@ function getActionButtonColorCss(
 ): SerializedStyles {
     const noHoverColorCss = {
         backgroundColor:
-            theme.colors.button[`${buttonType}_${buttonStateOverride}_background_color`],
-        color: theme.colors.button[`${buttonType}_${buttonStateOverride}_text_color`],
-        fill: theme.colors.button[`${buttonType}_${buttonStateOverride}_text_color`],
+            theme.colors.button[
+                `${buttonType}_${buttonStateOverride}_background_color`
+            ],
+        color: theme.colors.button[
+            `${buttonType}_${buttonStateOverride}_text_color`
+        ],
+        fill: theme.colors.button[
+            `${buttonType}_${buttonStateOverride}_text_color`
+        ],
         border:
             buttonType === ButtonType.SECONDARY
                 ? `1px solid ${theme.colors.button.secondary_border_color}`
@@ -102,7 +108,8 @@ function getActionButtonColorCss(
     return css({
         cursor: 'pointer',
         '&:hover': {
-            backgroundColor: theme.colors.button[`${buttonType}_hover_background_color`],
+            backgroundColor:
+                theme.colors.button[`${buttonType}_hover_background_color`],
             color: theme.colors.button[`${buttonType}_hover_text_color`],
             fill: theme.colors.button[`${buttonType}_hover_text_color`],
         },
@@ -140,7 +147,10 @@ function ActionButton(props: ActionButtonProps) {
         fontSize: textSize ?? TextSize.LARGE,
         height: 'fit-content',
         justifyContent: alignment === Alignment.LEFT ? 'flex-start' : 'center',
-        padding: buttonType === ButtonType.INVISIBLE || isIcon ? '8px 8px' : '8px 12px',
+        padding:
+            buttonType === ButtonType.INVISIBLE || isIcon
+                ? '8px 8px'
+                : '8px 12px',
         // Standard syntax to prevent text selection on double click.
         userSelect: 'none',
         width: width ?? 'fit-content',

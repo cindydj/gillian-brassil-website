@@ -1,5 +1,8 @@
 export function convertToPathName(name: string) {
-    let processedName = name.toLowerCase().replaceAll('+', 'and').replaceAll(' ', '-');
+    let processedName = name
+        .toLowerCase()
+        .replaceAll('+', 'and')
+        .replaceAll(' ', '-');
     if (processedName[0] !== '/') {
         processedName = '/' + processedName;
     }
