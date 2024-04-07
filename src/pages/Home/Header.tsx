@@ -3,6 +3,7 @@ import { css, useTheme } from "@emotion/react";
 import { useState } from "react";
 
 import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg';
+import ActionButton, { ButtonType } from "../../components/ActionButton/ActionButton";
 
 const CSS_HOME_NAVIGATION_WRAPPER = css({
     flex: 1,
@@ -53,7 +54,7 @@ function Header(props: HeaderProps) {
     });
 
     return (
-        <div css={[{ backgroundColor: theme.colors.primary }]}>
+        <div css={[{ backgroundColor: theme.colors.background.header }]}>
             <div css={cssHeaderContext}>
                 <div css={CSS_HOME_NAVIGATION_WRAPPER}>
                     {/* <Link css={[CSS_HOME_NAVIGATION]} to="/">
@@ -63,13 +64,13 @@ function Header(props: HeaderProps) {
                 </div>
                 {/* {!isMenu && <NavigationOptions />} */}
                 {isMenu && (
-                    // <ActionButton
-                    //     buttonType={ButtonType.INVISIBLE}
-                    //     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    //     isIcon
-                    // >
-                    <MenuIcon width="24px" height="24px" />
-                    // </ActionButton>
+                    <ActionButton
+                        buttonType={ButtonType.INVISIBLE}
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        isIcon
+                    >
+                        <MenuIcon width="24px" height="24px" />
+                    </ActionButton>
                 )}
             </div>
             {/* {isMenuOpen && <NavigationOptions isMenu />} */}
