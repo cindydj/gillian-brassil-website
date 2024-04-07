@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 
-import Header from '../Header/Header';
 import {
     ScreenSize,
     isLargerThanOrEqual,
     isSmallerThanOrEqual,
     useScreenSizeBreakpoints,
 } from '../../hooks/useScreenSizeBreakpoints';
+import Header from '../../pages/Home/Header';
 
 const CSS_PAGE_LAYOUT = css({
     display: 'flex',
@@ -46,7 +46,6 @@ function PageLayout(props: PageLayoutProps) {
         <div css={CSS_PAGE_LAYOUT}>
             <Header
                 isMenu={isSmallerThanOrEqual(screenSize, ScreenSize.LARGE)}
-                hasMargin={isLargerThanOrEqual(screenSize, ScreenSize.LARGE)}
             />
             <div css={cssPageContent}>{children}</div>
         </div>

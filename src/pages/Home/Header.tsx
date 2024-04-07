@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg';
 import ActionButton, { ButtonType } from "../../components/ActionButton/ActionButton";
+import NavigationOptions from "./NavigationOptions";
 
 const CSS_HOME_NAVIGATION_WRAPPER = css({
     flex: 1,
@@ -62,7 +63,7 @@ function Header(props: HeaderProps) {
                         <h1 css={cssHomeText}>Vitamin C Squad</h1>
                     </Link> */}
                 </div>
-                {/* {!isMenu && <NavigationOptions />} */}
+                {!isMenu && <NavigationOptions />}
                 {isMenu && (
                     <ActionButton
                         buttonType={ButtonType.INVISIBLE}
@@ -73,7 +74,7 @@ function Header(props: HeaderProps) {
                     </ActionButton>
                 )}
             </div>
-            {/* {isMenuOpen && <NavigationOptions isMenu />} */}
+            {isMenuOpen && <NavigationOptions isMenu />}
         </div>
     );
 }

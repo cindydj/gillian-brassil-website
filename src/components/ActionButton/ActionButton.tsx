@@ -2,8 +2,8 @@
 import { SerializedStyles, Theme, css, useTheme } from '@emotion/react';
 
 import ConditionalLink from '../ConditionalLink/ConditionalLink';
-import { useScreenSizeBreakpoints } from '../../hooks/useScreenSizeBreakpoints';
 import { getBoldFontWeight } from '../../utils/text_formatting';
+import { useScreenSizeBreakpoints } from '../../hooks/useScreenSizeBreakpoints';
 
 // The values in ButtonType and ButtonState need to match the keys in
 // packages/frontend/src/theme.ts for colors.button, or else the
