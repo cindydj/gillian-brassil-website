@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './pages/Home/App';
+import HomePage from './pages/Home/HomePage';
 import { ThemeProvider } from '@emotion/react';
 import { THEME } from './theme';
 
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/',
-        element: <App />,
+        element: <HomePage />,
     },
 ]);
 

@@ -32,7 +32,7 @@ export const THEME = {
     colors: {
         primary: '#f25f70',
         background: {
-            header: '#b3d9ff',
+            header: '#063d6e',
             selection: PINK_3,
             error: ERROR_BACKGROUND_COLOR,
         },
