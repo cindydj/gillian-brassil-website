@@ -32,7 +32,8 @@ export const THEME = {
     colors: {
         primary: '#f25f70',
         background: {
-            header: '#063d6e',
+            header_right: '#021526',
+            header_left: '#063d6e',
             selection: PINK_3,
             error: ERROR_BACKGROUND_COLOR,
         },

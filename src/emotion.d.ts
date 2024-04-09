@@ -46,7 +46,8 @@ declare module '@emotion/react' {
                 invisible_on_white_disabled_text_color: string;
             };
             background: {
-                header: string;
+                header_right: string;
+                header_left: string;
                 selection: string;
                 error: string;
             };
