@@ -57,7 +57,7 @@ function Header(props: HeaderProps) {
     });
 
     return (
-        <div css={[{ backgroundColor: theme.colors.background.header }]}>
+        <div>
             <div css={cssHeaderContext}>
                 <div css={CSS_HOME_NAVIGATION_WRAPPER}>
                     {/* <Link css={[CSS_HOME_NAVIGATION]} to="/">

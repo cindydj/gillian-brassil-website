@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css, useTheme } from '@emotion/react';
+import { css } from '@emotion/react';
 
 import {
     ScreenSize,
@@ -8,79 +8,13 @@ import {
     useScreenSizeBreakpoints,
 } from '../../hooks/useScreenSizeBreakpoints';
 import Header from '../../pages/Home/Header';
-import HOME_PROFILE_PICTURE from '../../assets/kiwi_square.png';
+import Banner from './Banner';
 
 const CSS_PAGE_LAYOUT = css({
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
 });
-
-const CSS_BANNER = css({
-    alignItems: 'center',
-    borderTop: '1px solid black',
-    display: 'flex',
-    flexDirection: 'row',
-    height: '500px',
-    width: '100%',
-});
-
-const CSS_BANNER_TEXT = css({
-    display: 'flex',
-    flex: '1',
-    flexDirection: 'column',
-    gap: '16px',
-    marginLeft: '120px',
-});
-
-const CSS_TITLE = css({
-    fontSize: '90px',
-    fontWeight: '500',
-});
-
-const CSS_SUBTITLE = css({
-    fontSize: '45px',
-    fontStyle: 'italic',
-});
-
-const CSS_BODY_TEXT = css({
-    fontSize: '40px',
-});
-
-const CSS_PROFILE_PICTURE = css({
-    height: '500px',
-    width: '500px',
-});
-
-function Banner() {
-    const theme = useTheme();
-
-    return (
-        <div
-            css={CSS_BANNER}
-            style={{
-                backgroundColor: theme.colors.background.header,
-                color: theme.colors.text.light,
-            }}
-        >
-            <div css={CSS_BANNER_TEXT}>
-                <div css={CSS_TITLE}>gillian • brassil</div>
-                <div css={CSS_SUBTITLE}>
-                    writer, multimedia reporter, political correspondant
-                </div>
-                <div css={CSS_BODY_TEXT}>
-                    Reporting, writing and pitching stories from Capitol Hill
-                    about issues, ideas and decisions that impact.
-                </div>
-            </div>
-            <img
-                src={HOME_PROFILE_PICTURE}
-                alt="Gillian Brassil"
-                css={CSS_PROFILE_PICTURE}
-            />
-        </div>
-    );
-}
 
 interface PageLayoutProps {
     /**
