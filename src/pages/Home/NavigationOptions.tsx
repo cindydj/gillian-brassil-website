@@ -8,6 +8,7 @@ import ActionButton, {
     ButtonState,
     ButtonType,
 } from '../../components/ActionButton/ActionButton';
+import { convertToPathName } from '../../utils/url';
 
 const CSS_NAVIGATION_BAR = css({
     display: 'flex',
@@ -29,7 +30,7 @@ function NavigationOptionButton(props: NavigationOptionButtonProps) {
             {isMenu ? (
                 <DropdownMenuItem
                     key={pageName}
-                    link="/placeholder"
+                    link={convertToPathName(pageName)}
                     menuItemType={MenuItemType.PRIMARY_BACKGROUND}
                     isSelected={false}
                 >
@@ -38,8 +39,8 @@ function NavigationOptionButton(props: NavigationOptionButtonProps) {
             ) : (
                 <ActionButton
                     key={pageName}
-                    link="/placeholder"
-                    buttonType={ButtonType.INVISIBLE}
+                    link={convertToPathName(pageName)}
+                    buttonType={ButtonType.INVISIBLE_ON_WHITE}
                     buttonStateOverride={
                         false ? ButtonState.SELECTED : ButtonState.DEFAULT
                     }
@@ -59,7 +60,8 @@ function NavigationOptionsContent(props: NavigationOptionsContentProps) {
     const { isMenu } = props;
     return (
         <>
-            <NavigationOptionButton pageName="About Me" isMenu={isMenu} />
+            <NavigationOptionButton pageName="About" isMenu={isMenu} />
+            <NavigationOptionButton pageName="Work" isMenu={isMenu} />
             <NavigationOptionButton pageName="Contact" isMenu={isMenu} />
         </>
     );

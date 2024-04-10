@@ -15,6 +15,7 @@ const CSS_GLOBAL_TEXT_STYLES = css({
         fontSize: '24px',
         WebkitFontSmoothing: 'antialiased',
         MozOsxFontSmoothing: 'grayscale',
+        color: THEME.colors.text.dark,
     },
     code: {
         fontFamily:
