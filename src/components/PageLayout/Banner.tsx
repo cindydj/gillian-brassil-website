@@ -10,7 +10,7 @@ const CSS_BANNER = css({
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'row',
-    height: '28vw',
+    height: '23vw',
     width: '100%',
 });
 
@@ -34,17 +34,18 @@ const CSS_VOLUME_ICON = css({
     width: '4.5vw',
 });
 
+const CSS_TITLE = css({
+    fontSize: '5vw',
+});
+
 const CSS_SUBTITLE = css({
+    fontSize: '2.5vw',
     marginTop: '-0.7vw',
 });
 
-const CSS_BODY_TEXT = css({
-    marginTop: '1.2vw',
-});
-
 const CSS_PROFILE_PICTURE = css({
-    height: '28vw',
-    width: '28vw',
+    height: '23vw',
+    width: '23vw',
     objectFit: 'cover',
     objectPosition: '0 100%',
     clipPath: 'polygon(30% 0, 0 100%, 100% 100%, 100% 0)',
@@ -80,7 +81,7 @@ function Banner() {
         >
             <div css={CSS_BANNER_TEXT}>
                 <div css={CSS_NAME}>
-                    <h1>
+                    <h1 css={CSS_TITLE}>
                         gil
                         <MiddleDot />
                         li
@@ -105,9 +106,6 @@ function Banner() {
                 <h2 css={CSS_SUBTITLE}>
                     writer, multimedia reporter, political correspondant
                 </h2>
-                <h3 css={CSS_BODY_TEXT}>
-                    Reporting from Capitol Hill about decisions that impact.
-                </h3>
             </div>
             <img
                 src={BANNER_PROFILE_PICTURE}

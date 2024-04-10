@@ -70,7 +70,7 @@ export const THEME = {
             invisible_on_white_base_text_color: GRAY_7,
             invisible_on_white_hover_background_color: BLUE_2,
             invisible_on_white_hover_text_color: GRAY_7,
-            invisible_on_white_selected_background_color: WHITE,
+            invisible_on_white_selected_background_color: BLUE_3,
             invisible_on_white_selected_text_color: BLUE_6,
             // Placeholder.
             invisible_on_white_disabled_background_color: GRAY_2,
@@ -81,6 +81,7 @@ export const THEME = {
             light: 'white',
             dark: GRAY_7,
             error: ERROR_MESSAGE_COLOR,
+            emphasis: BLUE_5,
             success: SUCCESS_MESSAGE_COLOR,
             partial: PARTIAL_MESSAGE_COLOR,
         },
@@ -98,6 +99,7 @@ export const THEME = {
         },
     },
     fonts: {
+        logo: 'MonteCarlo',
         header: 'Spectral',
         text: 'Lato',
     },

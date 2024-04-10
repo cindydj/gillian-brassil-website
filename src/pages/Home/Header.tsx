@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css, useTheme } from '@emotion/react';
+import { css } from '@emotion/react';
 import { useState } from 'react';
 
 import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg';
@@ -7,6 +7,8 @@ import ActionButton, {
     ButtonType,
 } from '../../components/ActionButton/ActionButton';
 import NavigationOptions from './NavigationOptions';
+import { Link } from 'react-router-dom';
+import MiddleDot from '../../components/MiddleDot/MiddleDot';
 
 const CSS_HOME_NAVIGATION_WRAPPER = css({
     flex: 1,
@@ -15,17 +17,13 @@ const CSS_HOME_NAVIGATION_WRAPPER = css({
 const CSS_HOME_NAVIGATION = css({
     alignItems: 'center',
     display: 'flex',
+    color: 'black',
     cursor: 'pointer',
-    gap: '8px',
+    fontSize: '2.5rem',
     textDecoration: 'none',
     transition: '.2s all',
     whiteSpace: 'nowrap',
     width: 'fit-content',
-});
-
-const CSS_LOGO = css({
-    height: '40px',
-    width: '40px',
 });
 
 interface HeaderProps {
@@ -39,31 +37,26 @@ interface HeaderProps {
 function Header(props: HeaderProps) {
     const { isMenu } = props;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const theme = useTheme();
 
     const cssHeaderContext = css({
         alignItems: 'center',
         display: 'flex',
-        gap: '4px',
+        gap: '1rem',
         margin: '0 auto',
-        padding: '12px',
-    });
-
-    const cssHomeText = css({
-        color: 'red',
-        fontWeight: 400,
-        // Standard syntax to prevent text selection on double click.
-        userSelect: 'none',
+        padding: '0.5rem 1.8rem',
     });
 
     return (
         <div>
             <div css={cssHeaderContext}>
                 <div css={CSS_HOME_NAVIGATION_WRAPPER}>
-                    {/* <Link css={[CSS_HOME_NAVIGATION]} to="/">
-                        <OrangeLogo css={CSS_LOGO} />
-                        <h1 css={cssHomeText}>Vitamin C Squad</h1>
-                    </Link> */}
+                    <Link
+                        css={[CSS_HOME_NAVIGATION]}
+                        style={{ fontFamily: 'Spectral' }}
+                        to="/"
+                    >
+                        g<MiddleDot isSmall />b
+                    </Link>
                 </div>
                 {!isMenu && <NavigationOptions />}
                 {isMenu && (

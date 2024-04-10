@@ -1,12 +1,18 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+interface MiddleDotProps {
+    isSmall?: boolean;
+}
 
-const CSS_MIDDLE_DOT = css({
-    margin: '0 0.1vw',
-});
-
-function MiddleDot() {
-    return <span css={CSS_MIDDLE_DOT}>•</span>;
+function MiddleDot(props: MiddleDotProps) {
+    const { isSmall } = props;
+    return (
+        <span
+            style={{
+                margin: isSmall ? '0' : '0 0.1vw',
+            }}
+        >
+            •
+        </span>
+    );
 }
 
 export default MiddleDot;

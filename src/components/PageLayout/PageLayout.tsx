@@ -9,6 +9,7 @@ import {
 } from '../../hooks/useScreenSizeBreakpoints';
 import Header from '../../pages/Home/Header';
 import Banner from './Banner';
+import ContactFooter from './ContactFooter';
 
 const CSS_PAGE_LAYOUT = css({
     display: 'flex',
@@ -40,10 +41,10 @@ function PageLayout(props: PageLayoutProps) {
         display: 'flex',
         flex: 1,
         flexDirection: 'column',
-        margin: '0 auto 24px auto',
-        padding: useMinimalPadding ? '12px' : '32px',
-        width: useMinimalPadding ? '90vw' : '80vw',
-        maxWidth: maxWidth ?? '800px',
+        margin: '0 auto 2rem auto',
+        padding: useMinimalPadding ? '1rem' : '2rem',
+        width: useMinimalPadding ? '80vw' : '60vw',
+        maxWidth: maxWidth ?? '100%',
     });
 
     return (
@@ -53,6 +54,7 @@ function PageLayout(props: PageLayoutProps) {
             />
             <Banner />
             <div css={cssPageContent}>{children}</div>
+            <ContactFooter />
         </div>
     );
 }

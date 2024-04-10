@@ -9,10 +9,12 @@ import ActionButton, {
     ButtonType,
 } from '../../components/ActionButton/ActionButton';
 import { convertToPathName } from '../../utils/url';
+import { useLocation } from 'react-router';
 
 const CSS_NAVIGATION_BAR = css({
     display: 'flex',
     flexDirection: 'row',
+    gap: '8px',
     listStyleType: 'none',
     margin: '0px',
 });
@@ -24,6 +26,9 @@ interface NavigationOptionButtonProps {
 
 function NavigationOptionButton(props: NavigationOptionButtonProps) {
     const { pageName, isMenu } = props;
+    const location = useLocation();
+
+    const isOptionSelected = convertToPathName(pageName) === location.pathname;
 
     return (
         <li>
@@ -31,8 +36,8 @@ function NavigationOptionButton(props: NavigationOptionButtonProps) {
                 <DropdownMenuItem
                     key={pageName}
                     link={convertToPathName(pageName)}
-                    menuItemType={MenuItemType.PRIMARY_BACKGROUND}
-                    isSelected={false}
+                    menuItemType={MenuItemType.WHITE_BACKGROUND}
+                    isSelected={isOptionSelected}
                 >
                     {pageName}
                 </DropdownMenuItem>
@@ -42,7 +47,9 @@ function NavigationOptionButton(props: NavigationOptionButtonProps) {
                     link={convertToPathName(pageName)}
                     buttonType={ButtonType.INVISIBLE_ON_WHITE}
                     buttonStateOverride={
-                        false ? ButtonState.SELECTED : ButtonState.DEFAULT
+                        isOptionSelected
+                            ? ButtonState.SELECTED
+                            : ButtonState.DEFAULT
                     }
                 >
                     {pageName}

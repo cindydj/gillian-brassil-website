@@ -35,11 +35,11 @@ interface DropdownMenuProps {
 const CSS_LABEL = css({
     cursor: 'text',
     display: 'flex',
-    fontSize: '15px',
+    fontSize: '1rem',
     fontWeight: 450,
-    paddingBottom: '7px',
-    paddingRight: '8px',
-    paddingLeft: '2px',
+    paddingBottom: '0.47rem',
+    paddingRight: '0.53rem',
+    paddingLeft: '0.13rem',
     width: 'fit-content',
 });
 
@@ -77,9 +77,9 @@ function DropdownMenu(props: DropdownMenuProps) {
     const theme = useTheme();
 
     const cssDropdownMenuContent = css({
-        paddingTop: '4px',
+        paddingTop: '0.27rem',
         position: 'absolute',
-        right: opensLeft ? '0px' : 'auto',
+        right: opensLeft ? '0' : 'auto',
         width,
         zIndex: 10,
     });
@@ -87,10 +87,10 @@ function DropdownMenu(props: DropdownMenuProps) {
     const cssMenuItemWrapper = css({
         backgroundColor: 'white',
         borderRadius: '4px',
-        boxShadow: `2px 2px 6px ${theme.colors.text.dark}`,
+        boxShadow: `0.13rem 0.13rem 0.4rem ${theme.colors.text.dark}`,
         display: 'flex',
         flexDirection: 'column',
-        padding: '8px 0px',
+        padding: '0.53rem 0',
     });
 
     return (
@@ -128,7 +128,7 @@ function DropdownMenu(props: DropdownMenuProps) {
                     <div css={CSS_BUTTON_CONTENT}>
                         <div css={CSS_BUTTON_TEXT}>{text}</div>
                         {!opensOnHover && (
-                            <ArrowDropdownIcon width="24px" height="24px" />
+                            <ArrowDropdownIcon width="1.6rem" height="1.6rem" />
                         )}
                     </div>
                 </ActionButton>

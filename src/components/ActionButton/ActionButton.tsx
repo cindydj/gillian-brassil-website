@@ -26,8 +26,8 @@ export enum Alignment {
     CENTER = 'center',
 }
 export enum TextSize {
-    SMALL = '14px',
-    LARGE = '16px',
+    SMALL = '0.8rem',
+    LARGE = '1.3rem',
 }
 
 export interface ActionButtonProps {
@@ -149,8 +149,8 @@ function ActionButton(props: ActionButtonProps) {
         justifyContent: alignment === Alignment.LEFT ? 'flex-start' : 'center',
         padding:
             buttonType === ButtonType.INVISIBLE || isIcon
-                ? '8px 8px'
-                : '8px 12px',
+                ? '0.6rem'
+                : '0.6rem 0.8rem',
         // Standard syntax to prevent text selection on double click.
         userSelect: 'none',
         width: width ?? 'fit-content',
@@ -165,7 +165,7 @@ function ActionButton(props: ActionButtonProps) {
     const cssButtonContent = css({
         alignItems: 'center',
         display: 'flex',
-        gap: '4px',
+        gap: '0.4rem',
         justifyContent: 'center',
         overflow: 'hidden',
         textOverflow: 'ellipsis',

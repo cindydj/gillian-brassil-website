@@ -23,7 +23,7 @@ function BackButton(props: BackButtonProps) {
                 buttonType={ButtonType.INVISIBLE_ON_WHITE}
                 isIcon
             >
-                <ArrowBackIcon width="24px" height="24px" />
+                <ArrowBackIcon width="1.6rem" height="1.6rem" />
             </ActionButton>
         </div>
     );

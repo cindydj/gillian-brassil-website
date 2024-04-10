@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css, useTheme } from '@emotion/react';
+import { css } from '@emotion/react';
 
 interface HeaderMenuProps {
     children: React.ReactNode;
@@ -7,10 +7,9 @@ interface HeaderMenuProps {
 
 function HeaderMenu(props: HeaderMenuProps) {
     const { children } = props;
-    const theme = useTheme();
 
     const cssHeaderMenuOptions = css({
-        backgroundColor: theme.colors.primary,
+        backgroundColor: 'white',
         display: 'flex',
         flexDirection: 'column',
         left: '0px',
