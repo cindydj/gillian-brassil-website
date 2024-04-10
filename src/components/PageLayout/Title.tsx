@@ -3,14 +3,13 @@ import { css } from '@emotion/react';
 import BackButton from '../BackButton/BackButton';
 
 const CSS_TITLE_WITH_BACK_BUTTON = css({
-    margin: '0px 40px',
+    margin: '0 2rem',
 });
 
 const CSS_PAGE_TITLE = css({
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
-    paddingBottom: '24px',
     textAlign: 'center',
 });
 
@@ -25,11 +24,11 @@ function Title(props: TitleProps) {
         <>
             <BackButton link={backButtonLink} />
             <div css={CSS_TITLE_WITH_BACK_BUTTON}>
-                <h1 css={CSS_PAGE_TITLE}>{title}</h1>
+                <h3 css={CSS_PAGE_TITLE}>{title}</h3>
             </div>
         </>
     ) : (
-        <h1 css={CSS_PAGE_TITLE}>{title}</h1>
+        <h3 css={CSS_PAGE_TITLE}>{title}</h3>
     );
 }
 

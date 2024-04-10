@@ -59,9 +59,6 @@ declare module '@emotion/react' {
                 success: string;
                 partial: string;
             };
-            table: {
-                border: string;
-            };
             neutral: {
                 grey_1: string;
                 grey_2: string;

@@ -12,10 +12,11 @@ const GRAY_7 = '#404040';
 const BLUE_1 = '#ecf5fe';
 const BLUE_2 = '#d8ebfd';
 const BLUE_3 = '#b1d7fb';
-const BLUE_4 = '#8bc4f9';
-const BLUE_5 = '#3d9cf5';
-const BLUE_6 = '#063d6e';
-const BLUE_7 = '#021526';
+const BLUE_4 = '#168CF3';
+const BLUE_5 = '#0A6CC2';
+const BLUE_6 = '#08569B';
+const BLUE_7 = '#063d6e';
+const BLUE_8 = '#021526';
 
 // Error/success message
 const ERROR_MESSAGE_COLOR = '#cc331f';
@@ -34,33 +35,33 @@ export const THEME = {
         background: {
             header_right: '#021526',
             header_left: '#063d6e',
-            selection: BLUE_3,
+            selection: GRAY_4,
             error: ERROR_BACKGROUND_COLOR,
         },
         hover: BLUE_2,
         button: {
-            primary_base_background_color: BLUE_6,
+            primary_base_background_color: BLUE_7,
             primary_base_text_color: WHITE,
-            primary_hover_background_color: BLUE_4,
+            primary_hover_background_color: BLUE_6,
             primary_hover_text_color: WHITE,
-            primary_selected_background_color: BLUE_7,
+            primary_selected_background_color: BLUE_8,
             primary_selected_text_color: WHITE,
             primary_disabled_background_color: GRAY_2,
             primary_disabled_text_color: GRAY_4,
             secondary_base_background_color: 'unset',
-            secondary_base_text_color: BLUE_6,
+            secondary_base_text_color: BLUE_7,
             secondary_border_color: BLUE_3,
             secondary_hover_background_color: BLUE_1,
-            secondary_hover_text_color: BLUE_6,
-            secondary_selected_background_color: BLUE_4,
-            secondary_selected_text_color: BLUE_6,
+            secondary_hover_text_color: BLUE_7,
+            secondary_selected_background_color: BLUE_5,
+            secondary_selected_text_color: BLUE_7,
             secondary_disabled_background_color: GRAY_2,
-            secondary_disabled_text_color: BLUE_4,
+            secondary_disabled_text_color: BLUE_5,
             invisible_on_dark_base_background_color: 'unset',
             invisible_on_dark_base_text_color: BLUE_2,
-            invisible_on_dark_hover_background_color: BLUE_5,
+            invisible_on_dark_hover_background_color: BLUE_6,
             invisible_on_dark_hover_text_color: WHITE,
-            invisible_on_dark_selected_background_color: BLUE_4,
+            invisible_on_dark_selected_background_color: BLUE_5,
             invisible_on_dark_selected_text_color: WHITE,
             // Placeholder.
             invisible_on_dark_disabled_background_color: GRAY_2,
@@ -71,7 +72,7 @@ export const THEME = {
             invisible_on_white_hover_background_color: BLUE_2,
             invisible_on_white_hover_text_color: GRAY_7,
             invisible_on_white_selected_background_color: BLUE_3,
-            invisible_on_white_selected_text_color: BLUE_6,
+            invisible_on_white_selected_text_color: BLUE_7,
             // Placeholder.
             invisible_on_white_disabled_background_color: GRAY_2,
             // Placeholder.
@@ -81,12 +82,9 @@ export const THEME = {
             light: 'white',
             dark: GRAY_7,
             error: ERROR_MESSAGE_COLOR,
-            emphasis: BLUE_5,
+            emphasis: BLUE_4,
             success: SUCCESS_MESSAGE_COLOR,
             partial: PARTIAL_MESSAGE_COLOR,
-        },
-        table: {
-            border: GRAY_7,
         },
         neutral: {
             grey_1: GRAY_1,

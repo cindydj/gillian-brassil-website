@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { css, useTheme } from '@emotion/react';
 import PageLayout from '../../components/PageLayout/PageLayout';
 import ActionButton from '../../components/ActionButton/ActionButton';
+import { css, useTheme } from '@emotion/react';
+import Banner from './Banner';
 
 const CSS_INTRO_WRAPPER = css({
     alignItems: 'center',
@@ -27,7 +28,7 @@ function HomePage() {
     };
 
     return (
-        <PageLayout>
+        <PageLayout fullWidthChildren={<Banner />}>
             <div css={CSS_INTRO_WRAPPER}>
                 <div css={CSS_INTRO_BLURB}>
                     Gillian is a national political correspondent in Washington
@@ -35,7 +36,7 @@ function HomePage() {
                     <span style={emphasisStyle}>pursuing the truth</span> and
                     holding power to account.
                 </div>
-                <ActionButton link="/work">See works</ActionButton>
+                <ActionButton link="/experience">See experiences</ActionButton>
             </div>
         </PageLayout>
     );

@@ -1,14 +1,20 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import { css, useTheme } from '@emotion/react';
 import { useState } from 'react';
 
-import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg';
-import ActionButton, {
-    ButtonType,
-} from '../../components/ActionButton/ActionButton';
-import NavigationOptions from './NavigationOptions';
+import { ReactComponent as MenuIcon } from '../../../assets/icons/menu.svg';
+import ActionButton, { ButtonType } from '../../ActionButton/ActionButton';
 import { Link } from 'react-router-dom';
-import MiddleDot from '../../components/MiddleDot/MiddleDot';
+import MiddleDot from '../../MiddleDot/MiddleDot';
+import NavigationOptions from './NavigationOptions';
+
+const CSS_HEADER_CONTEXT = css({
+    alignItems: 'center',
+    display: 'flex',
+    gap: '1rem',
+    margin: '0 auto',
+    padding: '0.5rem 1.8rem',
+});
 
 const CSS_HOME_NAVIGATION_WRAPPER = css({
     flex: 1,
@@ -17,7 +23,6 @@ const CSS_HOME_NAVIGATION_WRAPPER = css({
 const CSS_HOME_NAVIGATION = css({
     alignItems: 'center',
     display: 'flex',
-    color: 'black',
     cursor: 'pointer',
     fontSize: '2.5rem',
     textDecoration: 'none',
@@ -37,22 +42,23 @@ interface HeaderProps {
 function Header(props: HeaderProps) {
     const { isMenu } = props;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const cssHeaderContext = css({
-        alignItems: 'center',
-        display: 'flex',
-        gap: '1rem',
-        margin: '0 auto',
-        padding: '0.5rem 1.8rem',
-    });
+    const theme = useTheme();
 
     return (
         <div>
-            <div css={cssHeaderContext}>
+            <div
+                css={CSS_HEADER_CONTEXT}
+                style={{
+                    boxShadow: `0 0.1rem 0.5rem ${theme.colors.background.selection}`,
+                }}
+            >
                 <div css={CSS_HOME_NAVIGATION_WRAPPER}>
                     <Link
                         css={[CSS_HOME_NAVIGATION]}
-                        style={{ fontFamily: 'Spectral' }}
+                        style={{
+                            fontFamily: 'Spectral',
+                            color: theme.colors.text.dark,
+                        }}
                         to="/"
                     >
                         g<MiddleDot isSmall />b

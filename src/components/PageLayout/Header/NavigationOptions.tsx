@@ -3,12 +3,12 @@ import { css } from '@emotion/react';
 import HeaderMenu from './HeaderMenu';
 import DropdownMenuItem, {
     MenuItemType,
-} from '../../components/DropdownMenu/DropdownMenuItem';
+} from '../../DropdownMenu/DropdownMenuItem';
 import ActionButton, {
     ButtonState,
     ButtonType,
-} from '../../components/ActionButton/ActionButton';
-import { convertToPathName } from '../../utils/url';
+} from '../../ActionButton/ActionButton';
+import { convertToPathName } from '../../../utils/url';
 import { useLocation } from 'react-router';
 
 const CSS_NAVIGATION_BAR = css({
@@ -68,7 +68,7 @@ function NavigationOptionsContent(props: NavigationOptionsContentProps) {
     return (
         <>
             <NavigationOptionButton pageName="About" isMenu={isMenu} />
-            <NavigationOptionButton pageName="Work" isMenu={isMenu} />
+            <NavigationOptionButton pageName="Experience" isMenu={isMenu} />
             <NavigationOptionButton pageName="Contact" isMenu={isMenu} />
         </>
     );

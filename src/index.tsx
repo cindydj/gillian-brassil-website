@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ErrorPage from './pages/Error/ErrorPage';
 import HomePage from './pages/Home/HomePage';
 import { css, Global, ThemeProvider } from '@emotion/react';
 import { THEME } from './theme';
@@ -35,6 +36,13 @@ const CSS_GLOBAL_TEXT_STYLES = css({
         fontWeight: 500,
         margin: 0,
     },
+    // h3 is used for titles in the page content.
+    h3: {
+        fontFamily: 'Lato',
+        fontSize: '3.5rem',
+        fontWeight: 'bold',
+        margin: '1.5rem 0',
+    },
 });
 
 const router = createBrowserRouter([
@@ -47,7 +55,7 @@ const router = createBrowserRouter([
         element: <HomePage />,
     },
     {
-        path: '/work',
+        path: '/experience',
         element: <HomePage />,
     },
     {
@@ -57,6 +65,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <HomePage />,
+        errorElement: <ErrorPage />,
     },
 ]);
 

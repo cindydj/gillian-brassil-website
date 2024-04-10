@@ -2,7 +2,7 @@
 import { css, useTheme } from '@emotion/react';
 import BANNER_PROFILE_PICTURE from '../../assets/images/gillian_banner.jpg';
 import PRONUNCIATION_AUDIO_FILE from '../../assets/audio/gillian_pronunciation.mp3';
-import MiddleDot from '../MiddleDot/MiddleDot';
+import MiddleDot from '../../components/MiddleDot/MiddleDot';
 import { ReactComponent as VolumeIcon } from '../../assets/icons/volume_up.svg';
 import { useEffect, useRef, useState } from 'react';
 

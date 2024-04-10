@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import { css, useTheme } from '@emotion/react';
 import { ReactComponent as XIcon } from '../../assets/icons/X.svg';
 import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin.svg';
 import { ReactComponent as MailIcon } from '../../assets/icons/mail.svg';
@@ -13,7 +13,6 @@ const CSS_FOOTER = css({
 });
 
 const CSS_CONTACT_LINK_WRAPPER = css({
-    borderTop: '1px black solid',
     display: 'flex',
     flexDirection: 'row',
     gap: '0.7rem',
@@ -22,9 +21,16 @@ const CSS_CONTACT_LINK_WRAPPER = css({
 });
 
 function ContactFooter() {
+    const theme = useTheme();
+
     return (
         <div css={CSS_FOOTER}>
-            <div css={CSS_CONTACT_LINK_WRAPPER}>
+            <div
+                css={CSS_CONTACT_LINK_WRAPPER}
+                style={{
+                    borderTop: `1px ${theme.colors.text.dark} solid`,
+                }}
+            >
                 <a
                     href="https://www.linkedin.com/in/gillianrosebrassil/"
                     target="_blank"

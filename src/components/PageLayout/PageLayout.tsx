@@ -7,8 +7,7 @@ import {
     isSmallerThanOrEqual,
     useScreenSizeBreakpoints,
 } from '../../hooks/useScreenSizeBreakpoints';
-import Header from '../../pages/Home/Header';
-import Banner from './Banner';
+import Header from './Header/Header';
 import ContactFooter from './ContactFooter';
 
 const CSS_PAGE_LAYOUT = css({
@@ -23,6 +22,7 @@ interface PageLayoutProps {
      */
     children: React.ReactNode;
     maxWidth?: string;
+    fullWidthChildren?: React.ReactNode;
 }
 
 /**
@@ -30,7 +30,7 @@ interface PageLayoutProps {
  * Every single accessible page on this website should use PageLayout.
  */
 function PageLayout(props: PageLayoutProps) {
-    const { children, maxWidth } = props;
+    const { children, maxWidth, fullWidthChildren } = props;
     const screenSize = useScreenSizeBreakpoints();
     const useMinimalPadding = isSmallerThanOrEqual(
         screenSize,
@@ -52,7 +52,7 @@ function PageLayout(props: PageLayoutProps) {
             <Header
                 isMenu={isSmallerThanOrEqual(screenSize, ScreenSize.LARGE)}
             />
-            <Banner />
+            {fullWidthChildren}
             <div css={cssPageContent}>{children}</div>
             <ContactFooter />
         </div>
