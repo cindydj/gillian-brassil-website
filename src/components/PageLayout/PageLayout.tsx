@@ -23,6 +23,8 @@ interface PageLayoutProps {
     children: React.ReactNode;
     maxWidth?: string;
     fullWidthChildren?: React.ReactNode;
+    isContentCentered?: boolean;
+    isMainPage?: boolean;
 }
 
 /**
@@ -30,7 +32,13 @@ interface PageLayoutProps {
  * Every single accessible page on this website should use PageLayout.
  */
 function PageLayout(props: PageLayoutProps) {
-    const { children, maxWidth, fullWidthChildren } = props;
+    const {
+        children,
+        maxWidth,
+        fullWidthChildren,
+        isContentCentered,
+        isMainPage,
+    } = props;
     const screenSize = useScreenSizeBreakpoints();
     const useMinimalPadding = isSmallerThanOrEqual(
         screenSize,
@@ -38,11 +46,13 @@ function PageLayout(props: PageLayoutProps) {
     );
 
     const cssPageContent = css({
+        alignItems: isContentCentered ? 'center' : 'unset',
         display: 'flex',
         flex: 1,
         flexDirection: 'column',
         margin: '0 auto 2rem auto',
         padding: useMinimalPadding ? '1rem' : '2rem',
+        textAlign: isContentCentered ? 'center' : 'unset',
         width: useMinimalPadding ? '80vw' : '80vw',
         maxWidth: maxWidth ?? '100%',
     });
@@ -54,7 +64,7 @@ function PageLayout(props: PageLayoutProps) {
             />
             {fullWidthChildren}
             <div css={cssPageContent}>{children}</div>
-            <ContactFooter />
+            <ContactFooter isMainPage={isMainPage} />
         </div>
     );
 }

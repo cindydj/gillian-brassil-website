@@ -1,10 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react';
-import { ReactComponent as XIcon } from '../../assets/icons/X.svg';
-import { ReactComponent as LinkedinIcon } from '../../assets/icons/linkedin.svg';
-import { ReactComponent as MailIcon } from '../../assets/icons/mail.svg';
+import { ReactComponent as XIconColored } from '../../assets/icons/X.svg';
+import { ReactComponent as XIconBlack } from '../../assets/icons/X_black.svg';
+import { ReactComponent as LinkedinIconColored } from '../../assets/icons/linkedin.svg';
+import { ReactComponent as LinkedinIconBlack } from '../../assets/icons/linkedin_black.svg';
+import { ReactComponent as MailIconColored } from '../../assets/icons/mail.svg';
+import { ReactComponent as MailIconBlack } from '../../assets/icons/mail_black.svg';
+import { LINKEDIN_URL, X_URL } from '../../data/contact';
 
-const ICON_DIMENSION = '3rem';
+const ICON_DIMENSION_LARGE = '3rem';
+const ICON_DIMENSION_SMALL = '2rem';
 
 const CSS_FOOTER = css({
     display: 'flex',
@@ -15,13 +20,22 @@ const CSS_FOOTER = css({
 const CSS_CONTACT_LINK_WRAPPER = css({
     display: 'flex',
     flexDirection: 'row',
-    gap: '0.7rem',
-    padding: '1.5rem 0',
     width: 'fit-content',
 });
 
-function ContactFooter() {
+interface ContactFooterProps {
+    isMainPage?: boolean;
+}
+
+function ContactFooter(props: ContactFooterProps) {
+    const { isMainPage } = props;
     const theme = useTheme();
+    const iconDimension = isMainPage
+        ? ICON_DIMENSION_LARGE
+        : ICON_DIMENSION_SMALL;
+    const LinkedinIcon = isMainPage ? LinkedinIconColored : LinkedinIconBlack;
+    const XIcon = isMainPage ? XIconColored : XIconBlack;
+    const MailIcon = isMainPage ? MailIconColored : MailIconBlack;
 
     return (
         <div css={CSS_FOOTER}>
@@ -29,27 +43,25 @@ function ContactFooter() {
                 css={CSS_CONTACT_LINK_WRAPPER}
                 style={{
                     borderTop: `1px ${theme.colors.text.dark} solid`,
+                    gap: isMainPage ? '0.7rem' : '0.5rem',
+                    padding: isMainPage ? '1.5rem 0' : '1rem 0',
                 }}
             >
                 <a
-                    href="https://www.linkedin.com/in/gillianrosebrassil/"
+                    href={LINKEDIN_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     <LinkedinIcon
-                        width={ICON_DIMENSION}
-                        height={ICON_DIMENSION}
+                        width={iconDimension}
+                        height={iconDimension}
                     />
                 </a>
-                <a
-                    href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgillianrosebrassil.com%2F&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Efollow%7Ctwgr%5EGillian_Brassil&region=follow_link&screen_name=Gillian_Brassil"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <XIcon width={ICON_DIMENSION} height={ICON_DIMENSION} />
+                <a href={X_URL} target="_blank" rel="noopener noreferrer">
+                    <XIcon width={iconDimension} height={iconDimension} />
                 </a>
-                <a>
-                    <MailIcon width={ICON_DIMENSION} height={ICON_DIMENSION} />
+                <a href="/contact">
+                    <MailIcon width={iconDimension} height={iconDimension} />
                 </a>
             </div>
         </div>

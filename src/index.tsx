@@ -8,6 +8,7 @@ import HomePage from './pages/Home/HomePage';
 import { css, Global, ThemeProvider } from '@emotion/react';
 import { THEME } from './theme';
 import AboutPage from './pages/About/AboutPage';
+import ContactPage from './pages/Contact/ContactPage';
 
 const CSS_GLOBAL_TEXT_STYLES = css({
     body: {
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/contact',
-        element: <HomePage />,
+        element: <ContactPage />,
     },
     {
         path: '/',

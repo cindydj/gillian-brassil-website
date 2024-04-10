@@ -8,7 +8,7 @@ const CSS_INTRO_WRAPPER = css({
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
-    gap: '1.5rem',
+    gap: '2rem',
     width: '100%',
     flex: 1,
 });
@@ -18,7 +18,6 @@ const CSS_INTRO_BLURB = css({
     fontWeight: 'bold',
     marginTop: '1.5rem',
     maxWidth: '60%',
-    textAlign: 'center',
 });
 
 function HomePage() {
@@ -28,7 +27,7 @@ function HomePage() {
     };
 
     return (
-        <PageLayout fullWidthChildren={<Banner />}>
+        <PageLayout fullWidthChildren={<Banner />} isContentCentered isMainPage>
             <div css={CSS_INTRO_WRAPPER}>
                 <div css={CSS_INTRO_BLURB}>
                     Gillian is a national political correspondent in Washington
