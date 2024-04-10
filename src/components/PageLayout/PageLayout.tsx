@@ -43,7 +43,7 @@ function PageLayout(props: PageLayoutProps) {
         flexDirection: 'column',
         margin: '0 auto 2rem auto',
         padding: useMinimalPadding ? '1rem' : '2rem',
-        width: useMinimalPadding ? '80vw' : '60vw',
+        width: useMinimalPadding ? '80vw' : '80vw',
         maxWidth: maxWidth ?? '100%',
     });
 

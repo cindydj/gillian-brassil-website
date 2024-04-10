@@ -7,6 +7,7 @@ import ErrorPage from './pages/Error/ErrorPage';
 import HomePage from './pages/Home/HomePage';
 import { css, Global, ThemeProvider } from '@emotion/react';
 import { THEME } from './theme';
+import AboutPage from './pages/About/AboutPage';
 
 const CSS_GLOBAL_TEXT_STYLES = css({
     body: {
@@ -38,10 +39,11 @@ const CSS_GLOBAL_TEXT_STYLES = css({
     },
     // h3 is used for titles in the page content.
     h3: {
+        color: THEME.colors.text.header,
         fontFamily: 'Lato',
         fontSize: '3.5rem',
         fontWeight: 'bold',
-        margin: '1.5rem 0',
+        margin: '1rem 0 2rem 0',
     },
 });
 
@@ -52,7 +54,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/about',
-        element: <HomePage />,
+        element: <AboutPage />,
     },
     {
         path: '/experience',

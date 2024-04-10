@@ -79,10 +79,11 @@ export const THEME = {
             invisible_on_white_disabled_text_color: GRAY_4,
         },
         text: {
-            light: 'white',
+            light: WHITE,
             dark: GRAY_7,
-            error: ERROR_MESSAGE_COLOR,
             emphasis: BLUE_4,
+            header: BLUE_7,
+            error: ERROR_MESSAGE_COLOR,
             success: SUCCESS_MESSAGE_COLOR,
             partial: PARTIAL_MESSAGE_COLOR,
         },

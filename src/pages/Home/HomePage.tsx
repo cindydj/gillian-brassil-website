@@ -17,7 +17,7 @@ const CSS_INTRO_BLURB = css({
     fontSize: '2.5rem',
     fontWeight: 'bold',
     marginTop: '1.5rem',
-    maxWidth: '80%',
+    maxWidth: '60%',
     textAlign: 'center',
 });
 
