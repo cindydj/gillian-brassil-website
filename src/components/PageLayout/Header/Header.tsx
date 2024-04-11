@@ -3,10 +3,11 @@ import { css, useTheme } from '@emotion/react';
 import { useState } from 'react';
 
 import { ReactComponent as MenuIcon } from '../../../assets/icons/menu.svg';
-import ActionButton, { ButtonType } from '../../ActionButton/ActionButton';
+import ActionButton from '../../Button/ActionButton/ActionButton';
 import { Link } from 'react-router-dom';
 import MiddleDot from '../../MiddleDot/MiddleDot';
 import NavigationOptions from './NavigationOptions';
+import { ButtonType } from '../../Button/button_defs';
 
 const CSS_HEADER_CONTEXT = css({
     alignItems: 'center',
@@ -52,7 +53,7 @@ function Header(props: HeaderProps) {
                         css={[CSS_HOME_NAVIGATION]}
                         style={{
                             fontFamily: 'Spectral',
-                            color: theme.colors.text.dark,
+                            color: theme.colors.primary,
                         }}
                         to="/"
                     >

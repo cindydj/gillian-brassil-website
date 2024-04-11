@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import PageLayout from '../../components/PageLayout/PageLayout';
-import ActionButton from '../../components/ActionButton/ActionButton';
+import ActionButton from '../../components/Button/ActionButton/ActionButton';
 import { css, useTheme } from '@emotion/react';
 import Banner from './Banner';
 

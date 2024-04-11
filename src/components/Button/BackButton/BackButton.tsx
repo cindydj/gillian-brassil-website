@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { useNavigate } from 'react-router';
-import ActionButton, { ButtonType } from '../ActionButton/ActionButton';
-import { ReactComponent as ArrowBackIcon } from '../../assets/icons/arrow_back.svg';
+import ActionButton from '../ActionButton/ActionButton';
+import { ReactComponent as ArrowBackIcon } from '../../../assets/icons/arrow_back.svg';
 import { css } from '@emotion/react';
+import { ButtonType } from '../button_defs';
 
 const CSS_BACK_BUTTON = css({
     position: 'absolute',

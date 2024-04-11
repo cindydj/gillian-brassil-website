@@ -2,11 +2,11 @@
 import { useState } from 'react';
 import ActionButton, {
     ActionButtonProps,
-    ButtonState,
-} from '../ActionButton/ActionButton';
+} from '../Button/ActionButton/ActionButton';
 import { css, useTheme } from '@emotion/react';
 import DropdownMenuItem from './DropdownMenuItem';
 import { ReactComponent as ArrowDropdownIcon } from '../../assets/icons/arrow_drop_down.svg';
+import { ButtonState } from '../Button/button_defs';
 
 export type MenuItemType = {
     [text: string]: {

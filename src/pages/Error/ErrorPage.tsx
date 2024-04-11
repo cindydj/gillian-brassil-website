@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import PageLayout from '../../components/PageLayout/PageLayout';
-import ActionButton from '../../components/ActionButton/ActionButton';
+import ActionButton from '../../components/Button/ActionButton/ActionButton';
 
 const CSS_ERROR_PAGE = css({
     display: 'flex',

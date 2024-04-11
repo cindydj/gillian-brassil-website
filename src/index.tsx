@@ -19,6 +19,7 @@ const CSS_GLOBAL_TEXT_STYLES = css({
         fontSize: '1.6rem',
         WebkitFontSmoothing: 'antialiased',
         MozOsxFontSmoothing: 'grayscale',
+        backgroundColor: THEME.colors.background.general,
         color: THEME.colors.text.dark,
     },
     code: {

@@ -4,35 +4,30 @@ import HeaderMenu from './HeaderMenu';
 import DropdownMenuItem, {
     MenuItemType,
 } from '../../DropdownMenu/DropdownMenuItem';
-import ActionButton, {
-    ButtonState,
-    ButtonType,
-} from '../../ActionButton/ActionButton';
 import { convertToPathName } from '../../../utils/url';
 import { useLocation } from 'react-router';
+import NavigationButton from '../../Button/NavigationButton/NavigationButton';
+import { ButtonState } from '../../Button/button_defs';
 
 const CSS_NAVIGATION_BAR = css({
     display: 'flex',
     flexDirection: 'row',
-    gap: '8px',
+    gap: '1.5rem',
     listStyleType: 'none',
     margin: '0px',
 });
 
-interface NavigationOptionButtonProps {
+interface NavigationOptionItemProps {
     pageName: string;
     isMenu?: boolean;
 }
 
-function NavigationOptionButton(props: NavigationOptionButtonProps) {
+function NavigationOptionItem(props: NavigationOptionItemProps) {
     const { pageName, isMenu } = props;
     const location = useLocation();
 
-    const link = pageName === 'Home' ? '/' : convertToPathName(pageName);
+    const link = convertToPathName(pageName);
     let isOptionSelected = convertToPathName(pageName) === location.pathname;
-    if (pageName === 'Home' && location.pathname === '/') {
-        isOptionSelected = true;
-    }
 
     return (
         <li>
@@ -46,10 +41,9 @@ function NavigationOptionButton(props: NavigationOptionButtonProps) {
                     {pageName}
                 </DropdownMenuItem>
             ) : (
-                <ActionButton
+                <NavigationButton
                     key={pageName}
                     link={link}
-                    buttonType={ButtonType.INVISIBLE_ON_WHITE}
                     buttonStateOverride={
                         isOptionSelected
                             ? ButtonState.SELECTED
@@ -57,7 +51,7 @@ function NavigationOptionButton(props: NavigationOptionButtonProps) {
                     }
                 >
                     {pageName}
-                </ActionButton>
+                </NavigationButton>
             )}
         </li>
     );
@@ -71,10 +65,9 @@ function NavigationOptionsContent(props: NavigationOptionsContentProps) {
     const { isMenu } = props;
     return (
         <>
-            <NavigationOptionButton pageName="Home" isMenu={isMenu} />
-            <NavigationOptionButton pageName="About" isMenu={isMenu} />
-            <NavigationOptionButton pageName="Experience" isMenu={isMenu} />
-            <NavigationOptionButton pageName="Contact" isMenu={isMenu} />
+            <NavigationOptionItem pageName="About" isMenu={isMenu} />
+            <NavigationOptionItem pageName="Experience" isMenu={isMenu} />
+            <NavigationOptionItem pageName="Contact" isMenu={isMenu} />
         </>
     );
 }

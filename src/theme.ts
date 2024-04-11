@@ -1,5 +1,5 @@
 // Neutral colors
-const WHITE = 'white';
+const OFF_WHITE = '#FFF8F2';
 const GRAY_1 = '#ededed';
 const GRAY_2 = '#dedede';
 const GRAY_3 = '#bbbbbb';
@@ -31,8 +31,9 @@ export const THEME = {
         large: '1150px',
     },
     colors: {
-        primary: '#063d6e',
+        primary: BLUE_7,
         background: {
+            general: OFF_WHITE,
             banner_right: BLUE_8,
             banner_left: BLUE_7,
             header: BLUE_7,
@@ -43,11 +44,11 @@ export const THEME = {
         hover: BLUE_2,
         button: {
             primary_base_background_color: BLUE_7,
-            primary_base_text_color: WHITE,
+            primary_base_text_color: OFF_WHITE,
             primary_hover_background_color: BLUE_6,
-            primary_hover_text_color: WHITE,
+            primary_hover_text_color: OFF_WHITE,
             primary_selected_background_color: BLUE_8,
-            primary_selected_text_color: WHITE,
+            primary_selected_text_color: OFF_WHITE,
             primary_disabled_background_color: GRAY_2,
             primary_disabled_text_color: GRAY_4,
             secondary_base_background_color: 'unset',
@@ -62,9 +63,9 @@ export const THEME = {
             invisible_on_dark_base_background_color: 'unset',
             invisible_on_dark_base_text_color: BLUE_2,
             invisible_on_dark_hover_background_color: BLUE_6,
-            invisible_on_dark_hover_text_color: WHITE,
+            invisible_on_dark_hover_text_color: OFF_WHITE,
             invisible_on_dark_selected_background_color: BLUE_5,
-            invisible_on_dark_selected_text_color: WHITE,
+            invisible_on_dark_selected_text_color: OFF_WHITE,
             // Placeholder.
             invisible_on_dark_disabled_background_color: GRAY_2,
             // Placeholder.
@@ -81,7 +82,7 @@ export const THEME = {
             invisible_on_white_disabled_text_color: GRAY_4,
         },
         text: {
-            light: WHITE,
+            light: OFF_WHITE,
             dark: GRAY_7,
             emphasis: BLUE_4,
             header: BLUE_7,

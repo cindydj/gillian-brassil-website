@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import BackButton from '../BackButton/BackButton';
+import BackButton from '../Button/BackButton/BackButton';
 
 const CSS_TITLE_WITH_BACK_BUTTON = css({
     margin: '0 2rem',
