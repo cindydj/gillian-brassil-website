@@ -57,6 +57,13 @@ const CSS_BUTTON_TEXT = css({
     flex: 1,
 });
 
+const CSS_MENU_ITEM_WRAPPER = css({
+    borderRadius: '4px',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '0.53rem 0',
+});
+
 /**
  * Dropdown menu containing text-only menu items. This menu opens on hover
  * and does not support any action upon clicking on the parent button.
@@ -82,15 +89,6 @@ function DropdownMenu(props: DropdownMenuProps) {
         right: opensLeft ? '0' : 'auto',
         width,
         zIndex: 10,
-    });
-
-    const cssMenuItemWrapper = css({
-        backgroundColor: 'white',
-        borderRadius: '4px',
-        boxShadow: `0.13rem 0.13rem 0.4rem ${theme.colors.text.dark}`,
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '0.53rem 0',
     });
 
     return (
@@ -135,7 +133,12 @@ function DropdownMenu(props: DropdownMenuProps) {
             </div>
             {isOpen && (
                 <div css={cssDropdownMenuContent}>
-                    <div css={cssMenuItemWrapper}>
+                    <div
+                        css={CSS_MENU_ITEM_WRAPPER}
+                        style={{
+                            boxShadow: `0.13rem 0.13rem 0.4rem ${theme.colors.text.dark}`,
+                        }}
+                    >
                         {Object.entries(menuItems).map(
                             ([
                                 menuItem,

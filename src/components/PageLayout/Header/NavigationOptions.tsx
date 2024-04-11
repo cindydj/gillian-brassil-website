@@ -74,6 +74,7 @@ function NavigationOptionsContent(props: NavigationOptionsContentProps) {
 
 interface NavigationOptionsProps {
     isMenu?: boolean;
+    isOpen?: boolean;
 }
 
 /**
@@ -81,12 +82,12 @@ interface NavigationOptionsProps {
  * The buttons/dropdown menus are programatically generated from the hard-coded data.
  */
 function NavigationOptions(props: NavigationOptionsProps) {
-    const { isMenu } = props;
+    const { isMenu, isOpen } = props;
     return (
         <nav>
             <ul css={CSS_NAVIGATION_BAR}>
                 {isMenu ? (
-                    <HeaderMenu>
+                    <HeaderMenu isOpen={!!isOpen}>
                         <NavigationOptionsContent isMenu />
                     </HeaderMenu>
                 ) : (

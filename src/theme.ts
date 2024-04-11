@@ -28,7 +28,7 @@ export const THEME = {
     breakpoints: {
         small: '600px',
         medium: '750px',
-        large: '1150px',
+        large: '990px',
     },
     colors: {
         primary: BLUE_7,

@@ -51,7 +51,7 @@ function DropdownMenuItem(props: DropdownMenuItemProps) {
         cursor: !isDisabled ? 'pointer' : 'auto',
         display: 'flex',
         fontWeight: getBoldFontWeight(screenSize),
-        padding: '8px 16px',
+        padding: '0.6rem 2rem',
         textDecoration: 'none',
         // Standard syntax to prevent text selection on double click.
         userSelect: 'none',

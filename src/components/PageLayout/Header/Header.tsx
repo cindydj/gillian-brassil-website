@@ -63,7 +63,7 @@ function Header(props: HeaderProps) {
                 {!isMenu && <NavigationOptions />}
                 {isMenu && (
                     <ActionButton
-                        buttonType={ButtonType.INVISIBLE}
+                        buttonType={ButtonType.INVISIBLE_ON_WHITE}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         isIcon
                     >
@@ -71,7 +71,7 @@ function Header(props: HeaderProps) {
                     </ActionButton>
                 )}
             </div>
-            {isMenuOpen && <NavigationOptions isMenu />}
+            {isMenu && <NavigationOptions isMenu isOpen={isMenuOpen} />}
         </div>
     );
 }

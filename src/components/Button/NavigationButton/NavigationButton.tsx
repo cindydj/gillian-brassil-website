@@ -3,10 +3,6 @@ import { css, useTheme } from '@emotion/react';
 import ConditionalLink from '../../ConditionalLink/ConditionalLink';
 import { ButtonState } from '../button_defs';
 
-const CSS_NAVIGATION_BUTTON = css({
-    display: 'flex',
-});
-
 const CSS_BUTTON_CONTENT = css({
     display: 'flex',
     fontSize: '1.3rem',
@@ -39,7 +35,7 @@ function NavigationButton(props: NavigationButtonProps) {
     }
 
     return (
-        <ConditionalLink css={CSS_NAVIGATION_BUTTON} link={link}>
+        <ConditionalLink link={link}>
             <div css={CSS_BUTTON_CONTENT} style={buttonStyle}>
                 {children}
             </div>

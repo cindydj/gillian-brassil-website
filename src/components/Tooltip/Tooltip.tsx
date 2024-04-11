@@ -18,7 +18,7 @@ const CSS_TOOLTIP = css({
     top: 'calc(100% + 4px)',
     transform: 'translateX(-50%)',
     whiteSpace: 'nowrap',
-    zIndex: 1,
+    zIndex: 3,
 });
 
 const CSS_TOOLTIP_TRIGGER = css({
