@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import PageLayout from '../../components/PageLayout/PageLayout';
-import Title from '../../components/PageLayout/Title';
 import ActionButton from '../../components/ActionButton/ActionButton';
 
 const CSS_ERROR_PAGE = css({
@@ -16,9 +15,8 @@ const CSS_HOME_BUTTON = css({
 
 function ErrorPage() {
     return (
-        <PageLayout>
+        <PageLayout title="Oops!">
             <div css={CSS_ERROR_PAGE}>
-                <Title>Oops!</Title>
                 Sorry, this page doesn't exist.
                 <div css={CSS_HOME_BUTTON}>
                     <ActionButton link="/">Go home</ActionButton>

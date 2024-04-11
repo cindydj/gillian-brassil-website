@@ -11,6 +11,7 @@ const CSS_PAGE_TITLE = css({
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'center',
+    padding: '1rem 0 0 0',
 });
 
 interface TitleProps {
@@ -20,6 +21,7 @@ interface TitleProps {
 
 function Title(props: TitleProps) {
     const { children: title, backButtonLink } = props;
+
     return backButtonLink ? (
         <>
             <BackButton link={backButtonLink} />

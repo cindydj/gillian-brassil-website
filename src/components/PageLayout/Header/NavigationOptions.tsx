@@ -28,14 +28,18 @@ function NavigationOptionButton(props: NavigationOptionButtonProps) {
     const { pageName, isMenu } = props;
     const location = useLocation();
 
-    const isOptionSelected = convertToPathName(pageName) === location.pathname;
+    const link = pageName === 'Home' ? '/' : convertToPathName(pageName);
+    let isOptionSelected = convertToPathName(pageName) === location.pathname;
+    if (pageName === 'Home' && location.pathname === '/') {
+        isOptionSelected = true;
+    }
 
     return (
         <li>
             {isMenu ? (
                 <DropdownMenuItem
                     key={pageName}
-                    link={convertToPathName(pageName)}
+                    link={link}
                     menuItemType={MenuItemType.WHITE_BACKGROUND}
                     isSelected={isOptionSelected}
                 >
@@ -44,7 +48,7 @@ function NavigationOptionButton(props: NavigationOptionButtonProps) {
             ) : (
                 <ActionButton
                     key={pageName}
-                    link={convertToPathName(pageName)}
+                    link={link}
                     buttonType={ButtonType.INVISIBLE_ON_WHITE}
                     buttonStateOverride={
                         isOptionSelected
@@ -67,6 +71,7 @@ function NavigationOptionsContent(props: NavigationOptionsContentProps) {
     const { isMenu } = props;
     return (
         <>
+            <NavigationOptionButton pageName="Home" isMenu={isMenu} />
             <NavigationOptionButton pageName="About" isMenu={isMenu} />
             <NavigationOptionButton pageName="Experience" isMenu={isMenu} />
             <NavigationOptionButton pageName="Contact" isMenu={isMenu} />

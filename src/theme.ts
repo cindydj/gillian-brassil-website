@@ -13,8 +13,8 @@ const BLUE_1 = '#ecf5fe';
 const BLUE_2 = '#d8ebfd';
 const BLUE_3 = '#b1d7fb';
 const BLUE_4 = '#168CF3';
-const BLUE_5 = '#0A6CC2';
-const BLUE_6 = '#08569B';
+const BLUE_5 = '#08569B';
+const BLUE_6 = '#074C88';
 const BLUE_7 = '#063d6e';
 const BLUE_8 = '#021526';
 
@@ -33,8 +33,10 @@ export const THEME = {
     colors: {
         primary: '#063d6e',
         background: {
-            header_right: '#021526',
-            header_left: '#063d6e',
+            banner_right: BLUE_8,
+            banner_left: BLUE_7,
+            header: BLUE_7,
+            header_shadow: BLUE_8,
             selection: GRAY_4,
             error: ERROR_BACKGROUND_COLOR,
         },

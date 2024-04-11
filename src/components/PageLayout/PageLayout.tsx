@@ -9,6 +9,7 @@ import {
 } from '../../hooks/useScreenSizeBreakpoints';
 import Header from './Header/Header';
 import ContactFooter from './ContactFooter';
+import Title from './Title';
 
 const CSS_PAGE_LAYOUT = css({
     display: 'flex',
@@ -21,6 +22,7 @@ interface PageLayoutProps {
      * Content of the page, under the header.
      */
     children: React.ReactNode;
+    title?: string;
     maxWidth?: string;
     fullWidthChildren?: React.ReactNode;
     isContentCentered?: boolean;
@@ -34,6 +36,7 @@ interface PageLayoutProps {
 function PageLayout(props: PageLayoutProps) {
     const {
         children,
+        title,
         maxWidth,
         fullWidthChildren,
         isContentCentered,
@@ -63,6 +66,7 @@ function PageLayout(props: PageLayoutProps) {
                 isMenu={isSmallerThanOrEqual(screenSize, ScreenSize.LARGE)}
             />
             {fullWidthChildren}
+            {title && <Title>{title}</Title>}
             <div css={cssPageContent}>{children}</div>
             <ContactFooter isMainPage={isMainPage} />
         </div>

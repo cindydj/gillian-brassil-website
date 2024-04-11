@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import PageLayout from '../../components/PageLayout/PageLayout';
-import Title from '../../components/PageLayout/Title';
 import GILLIAN_PHOTO from '../../assets/images/gillian_about.jpg';
 import { css } from '@emotion/react';
 
@@ -17,8 +16,7 @@ const CSS_PHOTO = css({
 
 function AboutPage() {
     return (
-        <PageLayout>
-            <Title>About</Title>
+        <PageLayout title="About">
             <div css={CSS_ABOUT_SECTION}>
                 <img css={CSS_PHOTO} src={GILLIAN_PHOTO} alt="Gillian" />
                 Gillian Rose Brassil is a national political correspondent in

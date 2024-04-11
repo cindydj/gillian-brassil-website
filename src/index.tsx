@@ -9,6 +9,7 @@ import { css, Global, ThemeProvider } from '@emotion/react';
 import { THEME } from './theme';
 import AboutPage from './pages/About/AboutPage';
 import ContactPage from './pages/Contact/ContactPage';
+import ExperiencePage from './pages/Experience/ExperiencePage';
 
 const CSS_GLOBAL_TEXT_STYLES = css({
     body: {
@@ -44,7 +45,7 @@ const CSS_GLOBAL_TEXT_STYLES = css({
         fontFamily: 'Lato',
         fontSize: '3.5rem',
         fontWeight: 'bold',
-        margin: '1rem 0 2rem 0',
+        margin: '0',
     },
 });
 
@@ -59,7 +60,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/experience',
-        element: <HomePage />,
+        element: <ExperiencePage />,
     },
     {
         path: '/contact',

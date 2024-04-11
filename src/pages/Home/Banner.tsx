@@ -75,7 +75,7 @@ function Banner() {
         <div
             css={CSS_BANNER}
             style={{
-                backgroundImage: `linear-gradient(to right, ${theme.colors.background.header_left} , ${theme.colors.background.header_right})`,
+                backgroundImage: `linear-gradient(to right, ${theme.colors.background.banner_left} , ${theme.colors.background.banner_right})`,
                 color: theme.colors.text.light,
             }}
         >

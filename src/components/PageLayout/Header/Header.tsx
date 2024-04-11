@@ -46,12 +46,7 @@ function Header(props: HeaderProps) {
 
     return (
         <div>
-            <div
-                css={CSS_HEADER_CONTEXT}
-                style={{
-                    boxShadow: `0 0.1rem 0.5rem ${theme.colors.background.selection}`,
-                }}
-            >
+            <div css={CSS_HEADER_CONTEXT}>
                 <div css={CSS_HOME_NAVIGATION_WRAPPER}>
                     <Link
                         css={[CSS_HOME_NAVIGATION]}
