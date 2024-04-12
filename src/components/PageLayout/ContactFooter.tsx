@@ -12,15 +12,20 @@ const ICON_DIMENSION_LARGE = '3rem';
 const ICON_DIMENSION_SMALL = '2rem';
 
 const CSS_FOOTER = css({
+    alignItems: 'center',
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: 'column',
 });
 
 const CSS_CONTACT_LINK_WRAPPER = css({
     display: 'flex',
     flexDirection: 'row',
     width: 'fit-content',
+});
+
+const CSS_COPYRIGHT_FOOTNOTE = css({
+    fontSize: '1rem',
+    padding: '0.5rem 0 1.2rem 0',
 });
 
 interface ContactFooterProps {
@@ -44,7 +49,7 @@ function ContactFooter(props: ContactFooterProps) {
                 style={{
                     borderTop: `1px ${theme.colors.text.dark} solid`,
                     gap: isMainPage ? '0.7rem' : '0.5rem',
-                    padding: isMainPage ? '1.5rem 0' : '1rem 0',
+                    padding: isMainPage ? '1.5rem 0 0.5rem 0' : '1rem 0 0 0',
                 }}
             >
                 <a
@@ -63,6 +68,9 @@ function ContactFooter(props: ContactFooterProps) {
                 <a href="/contact">
                     <MailIcon width={iconDimension} height={iconDimension} />
                 </a>
+            </div>
+            <div css={CSS_COPYRIGHT_FOOTNOTE}>
+                © Copyright 2024 Gillian Rose Brassil
             </div>
         </div>
     );
