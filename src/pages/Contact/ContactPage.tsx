@@ -14,7 +14,11 @@ function ContactPage() {
         <PageLayout title="Contact" isContentCentered>
             <span>
                 Connect with me on <a href={LINKEDIN_URL}>LinkedIn</a> or follow
-                me on X, <a href={X_URL}>@Gillian_Brassil</a>!
+                me on X at <a href={X_URL}>@Gillian_Brassil</a>.
+                <br />
+                <br />
+                You can also reach me via email(TODO: implement javascript
+                function)!
             </span>
             <img
                 src={GILLIAN_CONTACT_PHOTO}
