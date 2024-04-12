@@ -14,8 +14,7 @@ import ExperiencePage from './pages/Experience/ExperiencePage';
 const CSS_GLOBAL_TEXT_STYLES = css({
     body: {
         margin: 0,
-        fontFamily:
-            "'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+        fontFamily: `${THEME.fonts.text}, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif`,
         fontSize: '1.6rem',
         WebkitFontSmoothing: 'antialiased',
         MozOsxFontSmoothing: 'grayscale',
@@ -28,13 +27,13 @@ const CSS_GLOBAL_TEXT_STYLES = css({
     },
     // h1 and h2 are reserved for the banner typography.
     h1: {
-        fontFamily: 'Spectral',
+        fontFamily: THEME.fonts.header,
         fontSize: '5rem',
         fontWeight: 'bold',
         margin: 0,
     },
     h2: {
-        fontFamily: 'Spectral',
+        fontFamily: THEME.fonts.header,
         fontSize: '2.5rem',
         fontStyle: 'italic',
         fontWeight: 500,
@@ -43,7 +42,7 @@ const CSS_GLOBAL_TEXT_STYLES = css({
     // h3 is used for titles in the page content.
     h3: {
         color: THEME.colors.text.header,
-        fontFamily: 'Lato',
+        fontFamily: THEME.fonts.text,
         fontSize: '3.5rem',
         fontWeight: 'bold',
         margin: '0',

@@ -57,10 +57,12 @@ declare module '@emotion/react' {
             text: {
                 light: string;
                 dark: string;
-                error: string;
                 emphasis: string;
-                success: string;
-                partial: string;
+                feedback: {
+                    error: string;
+                    success: string;
+                    partial: string;
+                };
             };
             neutral: {
                 grey_1: string;

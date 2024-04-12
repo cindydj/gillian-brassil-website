@@ -2,12 +2,9 @@
 import { css, useTheme } from '@emotion/react';
 import { useState } from 'react';
 
-import { ReactComponent as MenuIcon } from '../../../assets/icons/menu.svg';
-import ActionButton from '../../Button/ActionButton/ActionButton';
 import { Link } from 'react-router-dom';
 import MiddleDot from '../../MiddleDot/MiddleDot';
 import NavigationOptions from './NavigationOptions';
-import { ButtonType } from '../../Button/button_defs';
 
 const CSS_HEADER_CONTEXT = css({
     alignItems: 'center',
@@ -30,6 +27,40 @@ const CSS_HOME_NAVIGATION = css({
     transition: '.2s all',
     whiteSpace: 'nowrap',
     width: 'fit-content',
+});
+
+const CSS_MENU_ICON = css({
+    position: 'relative',
+    width: '30px',
+    height: '30px',
+    transition: 'transform 0.5s',
+    ':hover': {
+        cursor: 'pointer',
+    },
+});
+
+const MENU_BAR_CSS_SHARED = {
+    left: '3px',
+    width: '23px',
+    height: '2px',
+};
+
+const CSS_MENU_BAR_1 = css({
+    position: 'absolute',
+    transition: 'transform .5s ease .1s,background .4s ease 0ms',
+    ...MENU_BAR_CSS_SHARED,
+});
+
+const CSS_MENU_BAR_2 = css({
+    position: 'absolute',
+    transition: 'opacity .5s ease,background .4s ease',
+    ...MENU_BAR_CSS_SHARED,
+});
+
+const CSS_MENU_BAR_3 = css({
+    position: 'absolute',
+    transition: 'transform .5s ease .1s,background .4s ease 0ms',
+    ...MENU_BAR_CSS_SHARED,
 });
 
 interface HeaderProps {
@@ -62,13 +93,39 @@ function Header(props: HeaderProps) {
                 </div>
                 {!isMenu && <NavigationOptions />}
                 {isMenu && (
-                    <ActionButton
-                        buttonType={ButtonType.INVISIBLE_ON_WHITE}
+                    <div
+                        css={CSS_MENU_ICON}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        isIcon
                     >
-                        <MenuIcon width="24px" height="24px" />
-                    </ActionButton>
+                        <div
+                            css={CSS_MENU_BAR_1}
+                            style={{
+                                top: isMenuOpen ? '6.5px' : '6px',
+                                background: theme.colors.text.dark,
+                                transform: isMenuOpen
+                                    ? 'rotate(45deg) translate3d(6px, 5.5px, 0)'
+                                    : 'none',
+                            }}
+                        />
+                        <div
+                            css={CSS_MENU_BAR_2}
+                            style={{
+                                top: '14px',
+                                opacity: isMenuOpen ? '0' : '1',
+                                background: theme.colors.text.dark,
+                            }}
+                        />
+                        <div
+                            css={CSS_MENU_BAR_3}
+                            style={{
+                                top: '22px',
+                                background: theme.colors.text.dark,
+                                transform: isMenuOpen
+                                    ? 'rotate(-45deg) translate3d(5.5px, -5px, 0)'
+                                    : 'none',
+                            }}
+                        />
+                    </div>
                 )}
             </div>
             {isMenu && <NavigationOptions isMenu isOpen={isMenuOpen} />}

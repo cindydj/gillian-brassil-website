@@ -56,7 +56,7 @@ function TextField(props: TextFieldProps) {
         },
         border: !errorMessage
             ? `1px ${theme.colors.text.dark} solid`
-            : `2px ${theme.colors.text.error} solid`,
+            : `2px ${theme.colors.text.feedback.error} solid`,
         borderRadius: '4px',
         fontFamily: theme.fonts.text,
         fontSize: '14px',
@@ -65,7 +65,7 @@ function TextField(props: TextFieldProps) {
     });
 
     const cssErrorMessage = css({
-        color: theme.colors.text.error,
+        color: theme.colors.text.feedback.error,
         fontSize: '14px',
         paddingTop: '4px',
         paddingLeft: '2px',

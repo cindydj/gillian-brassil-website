@@ -9,8 +9,8 @@ const GRAY_6 = '#5f5f5f';
 const GRAY_7 = '#404040';
 
 // Primary color hues (bright pink)
-const BLUE_1 = '#ecf5fe';
-const BLUE_2 = '#d8ebfd';
+const BLUE_1 = '#ebf2f7';
+const BLUE_2 = '#dae6ee';
 const BLUE_3 = '#b1d7fb';
 const BLUE_4 = '#168CF3';
 const BLUE_5 = '#08569B';
@@ -72,9 +72,9 @@ export const THEME = {
             invisible_on_dark_disabled_text_color: GRAY_4,
             invisible_on_white_base_background_color: 'unset',
             invisible_on_white_base_text_color: GRAY_7,
-            invisible_on_white_hover_background_color: BLUE_2,
+            invisible_on_white_hover_background_color: BLUE_1,
             invisible_on_white_hover_text_color: GRAY_7,
-            invisible_on_white_selected_background_color: BLUE_3,
+            invisible_on_white_selected_background_color: BLUE_2,
             invisible_on_white_selected_text_color: BLUE_7,
             // Placeholder.
             invisible_on_white_disabled_background_color: GRAY_2,
@@ -86,9 +86,11 @@ export const THEME = {
             dark: GRAY_7,
             emphasis: BLUE_4,
             header: BLUE_7,
-            error: ERROR_MESSAGE_COLOR,
-            success: SUCCESS_MESSAGE_COLOR,
-            partial: PARTIAL_MESSAGE_COLOR,
+            feedback: {
+                error: ERROR_MESSAGE_COLOR,
+                success: SUCCESS_MESSAGE_COLOR,
+                partial: PARTIAL_MESSAGE_COLOR,
+            },
         },
         neutral: {
             grey_1: GRAY_1,
