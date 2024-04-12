@@ -12,6 +12,8 @@ const CSS_HEADER_CONTEXT = css({
     gap: '1rem',
     margin: '0 auto',
     padding: '0.5rem 1.8rem',
+    position: 'relative',
+    zIndex: 2,
 });
 
 const CSS_HOME_NAVIGATION_WRAPPER = css({
@@ -33,7 +35,7 @@ const CSS_MENU_ICON = css({
     position: 'relative',
     width: '30px',
     height: '30px',
-    transition: 'transform 0.5s',
+    transition: 'transform 0.3s',
     ':hover': {
         cursor: 'pointer',
     },
@@ -78,7 +80,12 @@ function Header(props: HeaderProps) {
 
     return (
         <div>
-            <div css={CSS_HEADER_CONTEXT}>
+            <div
+                css={CSS_HEADER_CONTEXT}
+                style={{
+                    backgroundColor: theme.colors.background.general,
+                }}
+            >
                 <div css={CSS_HOME_NAVIGATION_WRAPPER}>
                     <Link
                         css={[CSS_HOME_NAVIGATION]}

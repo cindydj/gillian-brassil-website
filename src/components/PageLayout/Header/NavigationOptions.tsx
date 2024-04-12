@@ -9,6 +9,8 @@ import { useLocation } from 'react-router';
 import NavigationButton from '../../Button/NavigationButton/NavigationButton';
 import { ButtonState } from '../../Button/button_defs';
 
+const PAGE_NAMES = ['About', 'Experience', 'Contact'];
+
 const CSS_NAVIGATION_BAR = css({
     display: 'flex',
     flexDirection: 'row',
@@ -65,9 +67,15 @@ function NavigationOptionsContent(props: NavigationOptionsContentProps) {
     const { isMenu } = props;
     return (
         <>
-            <NavigationOptionItem pageName="About" isMenu={isMenu} />
-            <NavigationOptionItem pageName="Experience" isMenu={isMenu} />
-            <NavigationOptionItem pageName="Contact" isMenu={isMenu} />
+            {PAGE_NAMES.map((pageName) => {
+                return (
+                    <NavigationOptionItem
+                        pageName={pageName}
+                        key={pageName}
+                        isMenu={isMenu}
+                    />
+                );
+            })}
         </>
     );
 }
@@ -84,17 +92,15 @@ interface NavigationOptionsProps {
 function NavigationOptions(props: NavigationOptionsProps) {
     const { isMenu, isOpen } = props;
     return (
-        <nav>
-            <ul css={CSS_NAVIGATION_BAR}>
-                {isMenu ? (
-                    <HeaderMenu isOpen={!!isOpen}>
-                        <NavigationOptionsContent isMenu />
-                    </HeaderMenu>
-                ) : (
-                    <NavigationOptionsContent />
-                )}
-            </ul>
-        </nav>
+        <ul css={CSS_NAVIGATION_BAR}>
+            {isMenu ? (
+                <HeaderMenu isOpen={!!isOpen} items={PAGE_NAMES}>
+                    <NavigationOptionsContent isMenu />
+                </HeaderMenu>
+            ) : (
+                <NavigationOptionsContent />
+            )}
+        </ul>
     );
 }
 
