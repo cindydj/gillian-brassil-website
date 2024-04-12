@@ -45,7 +45,30 @@ const CSS_GLOBAL_TEXT_STYLES = css({
         fontFamily: THEME.fonts.text,
         fontSize: '3.5rem',
         fontWeight: 'bold',
-        margin: '0',
+        margin: 0,
+    },
+    // h4 is used for subtitles in the Experience page.
+    // The size is slightly smaller than the default text size.
+    h4: {
+        fontFamily: THEME.fonts.text,
+        fontSize: '1.4rem',
+        fontWeight: 'normal',
+        margin: '0.5rem 0 0 0',
+    },
+    /**
+     * Media queries to adjust font sizes for different screen sizes.
+     * NOTE: This should match the value of the textSize breakpoint in theme.ts.
+     */
+    '@media screen and (max-width: 700px)': {
+        body: {
+            fontSize: '1.2rem',
+        },
+        h3: {
+            fontSize: '2rem',
+        },
+        h4: {
+            fontSize: '1.1rem',
+        },
     },
 });
 

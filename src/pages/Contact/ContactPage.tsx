@@ -3,13 +3,27 @@ import PageLayout from '../../components/PageLayout/PageLayout';
 import { LINKEDIN_URL, X_URL } from '../../data/contact';
 import GILLIAN_CONTACT_PHOTO from '../../assets/images/gillian_and_cubby.webp';
 import { css } from '@emotion/react';
+import {
+    shouldImageBeHorizontal,
+    useScreenSizeBreakpoints,
+} from '../../hooks/useScreenSizeBreakpoints';
 
-const CSS_PHOTO = css({
+const CSS_PHOTO_HORIZONTAL = css({
     paddingTop: '3rem',
     width: '40rem',
 });
 
+const CSS_PHOTO_VERTICAL = css({
+    paddingTop: '3rem',
+    height: '25rem',
+    width: '20rem',
+    objectFit: 'cover',
+    objectPosition: '10 100%',
+});
+
 function ContactPage() {
+    const screenSize = useScreenSizeBreakpoints();
+
     return (
         <PageLayout title="Contact" isContentCentered>
             <span>
@@ -20,11 +34,19 @@ function ContactPage() {
                 You can also reach me via email(TODO: implement javascript
                 function)!
             </span>
-            <img
-                src={GILLIAN_CONTACT_PHOTO}
-                alt="Gillian with her dog Cubby"
-                css={CSS_PHOTO}
-            />
+            {shouldImageBeHorizontal(screenSize) ? (
+                <img
+                    src={GILLIAN_CONTACT_PHOTO}
+                    alt="Gillian with her dog Cubby"
+                    css={CSS_PHOTO_HORIZONTAL}
+                />
+            ) : (
+                <img
+                    src={GILLIAN_CONTACT_PHOTO}
+                    alt="Gillian with her dog Cubby"
+                    css={CSS_PHOTO_VERTICAL}
+                />
+            )}
         </PageLayout>
     );
 }

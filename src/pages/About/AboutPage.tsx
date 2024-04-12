@@ -2,23 +2,39 @@
 import PageLayout from '../../components/PageLayout/PageLayout';
 import GILLIAN_PHOTO from '../../assets/images/gillian_about.jpg';
 import { css } from '@emotion/react';
+import {
+    shouldScreenBeColumn,
+    useScreenSizeBreakpoints,
+} from '../../hooks/useScreenSizeBreakpoints';
 
 const CSS_ABOUT_SECTION = css({
     display: 'flex',
-    flexDirection: 'row',
     gap: '3rem',
 });
 
 const CSS_PHOTO = css({
-    width: '20rem',
     objectFit: 'scale-down',
 });
 
 function AboutPage() {
+    const screenSize = useScreenSizeBreakpoints();
+    const isSmallScreen = shouldScreenBeColumn(screenSize);
+
     return (
         <PageLayout title="About">
-            <div css={CSS_ABOUT_SECTION}>
-                <img css={CSS_PHOTO} src={GILLIAN_PHOTO} alt="Gillian" />
+            <div
+                css={CSS_ABOUT_SECTION}
+                style={{
+                    alignItems: isSmallScreen ? 'center' : 'flex-start',
+                    flexDirection: isSmallScreen ? 'column' : 'row',
+                }}
+            >
+                <img
+                    css={CSS_PHOTO}
+                    src={GILLIAN_PHOTO}
+                    width={isSmallScreen ? '200rem' : '400rem'}
+                    alt="Gillian"
+                />
                 Gillian Rose Brassil is a national political correspondent in
                 Washington D.C. for McClatchy's five California papers: The
                 Sacramento Bee, Fresno Bee, Modesto Bee, San Luis Obispo Tribune

@@ -1,6 +1,6 @@
 import {
     ScreenSize,
-    isLargerThanOrEqual,
+    shouldTextBeSmaller,
 } from '../hooks/useScreenSizeBreakpoints';
 
 // Characters that error when put directly in Javascript.
@@ -19,7 +19,5 @@ export function getBoldFontWeight(
     isExtraBold?: boolean,
 ) {
     const boldFontWeight = isExtraBold ? 700 : 600;
-    return isLargerThanOrEqual(screenSize, ScreenSize.MEDIUM)
-        ? boldFontWeight
-        : 550;
+    return shouldTextBeSmaller(screenSize) ? boldFontWeight : 550;
 }

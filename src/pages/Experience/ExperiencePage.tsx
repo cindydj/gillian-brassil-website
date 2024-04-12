@@ -23,15 +23,10 @@ const CSS_EXPERIENCE_ITEM = css({
 const CSS_WORKSPLACE_DETAILS = css({
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.5rem',
 });
 
 const CSS_WORKPLACE_NAME = css({
     fontWeight: 'bold',
-});
-
-const CSS_ROLE_TEXT = css({
-    fontSize: '1.4rem',
 });
 
 interface WorkplaceDetailsProps {
@@ -60,7 +55,7 @@ function WorkplaceDetails(props: WorkplaceDetailsProps) {
             ) : (
                 <div css={CSS_WORKPLACE_NAME}>{name}</div>
             )}
-            {role && <div css={CSS_ROLE_TEXT}>{role}</div>}
+            {role && <h4>{role}</h4>}
         </span>
     );
 }

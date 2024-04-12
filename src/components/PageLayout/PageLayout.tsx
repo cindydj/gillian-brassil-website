@@ -2,9 +2,7 @@
 import { css } from '@emotion/react';
 
 import {
-    ScreenSize,
-    isLargerThanOrEqual,
-    isSmallerThanOrEqual,
+    shouldScreenBeColumn,
     useScreenSizeBreakpoints,
 } from '../../hooks/useScreenSizeBreakpoints';
 import Header from './Header/Header';
@@ -43,10 +41,6 @@ function PageLayout(props: PageLayoutProps) {
         isMainPage,
     } = props;
     const screenSize = useScreenSizeBreakpoints();
-    const useMinimalPadding = isSmallerThanOrEqual(
-        screenSize,
-        ScreenSize.MEDIUM,
-    );
 
     const cssPageContent = css({
         alignItems: isContentCentered ? 'center' : 'unset',
@@ -54,17 +48,15 @@ function PageLayout(props: PageLayoutProps) {
         flex: 1,
         flexDirection: 'column',
         margin: '0 auto 2rem auto',
-        padding: useMinimalPadding ? '1rem' : '2rem',
+        padding: shouldScreenBeColumn(screenSize) ? '1rem' : '2rem',
         textAlign: isContentCentered ? 'center' : 'unset',
-        width: useMinimalPadding ? '80vw' : '80vw',
+        width: '80vw',
         maxWidth: maxWidth ?? '100%',
     });
 
     return (
         <div css={CSS_PAGE_LAYOUT}>
-            <Header
-                isMenu={isSmallerThanOrEqual(screenSize, ScreenSize.LARGE)}
-            />
+            <Header isMenu={shouldScreenBeColumn(screenSize)} />
             {fullWidthChildren}
             {title && <Title>{title}</Title>}
             <div css={cssPageContent}>{children}</div>

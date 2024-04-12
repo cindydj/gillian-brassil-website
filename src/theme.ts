@@ -26,9 +26,12 @@ const PARTIAL_MESSAGE_COLOR = '#0463c2';
 
 export const THEME = {
     breakpoints: {
-        small: '600px',
-        medium: '750px',
-        large: '990px',
+        // Breakpoint at which pages that are flex direction
+        // row should switch to column.
+        flexDirectionSwap: '900px',
+        // Breakpoint at which text and horizontal images will have to be adjusted.
+        // NOTE: This should match the media query value in index.tsx.
+        textAndImageSize: '700px',
     },
     colors: {
         primary: BLUE_7,
