@@ -4,12 +4,13 @@ import GILLIAN_PHOTO from '../../assets/images/gillian_about.jpg';
 import { css } from '@emotion/react';
 import {
     shouldScreenBeColumn,
-    useScreenSizeBreakpoints,
+    useScreenSizeHorizontalBreakpoints,
 } from '../../hooks/useScreenSizeBreakpoints';
 
 const CSS_ABOUT_SECTION = css({
     display: 'flex',
     gap: '3rem',
+    marginBottom: '1rem',
 });
 
 const CSS_PHOTO = css({
@@ -17,7 +18,7 @@ const CSS_PHOTO = css({
 });
 
 function AboutPage() {
-    const screenSize = useScreenSizeBreakpoints();
+    const screenSize = useScreenSizeHorizontalBreakpoints();
     const isSmallScreen = shouldScreenBeColumn(screenSize);
 
     return (

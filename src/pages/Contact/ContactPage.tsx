@@ -5,7 +5,7 @@ import GILLIAN_CONTACT_PHOTO from '../../assets/images/gillian_and_cubby.webp';
 import { css } from '@emotion/react';
 import {
     shouldImageBeHorizontal,
-    useScreenSizeBreakpoints,
+    useScreenSizeHorizontalBreakpoints,
 } from '../../hooks/useScreenSizeBreakpoints';
 import EmailLink from '../../components/EmailLink/EmailLink';
 
@@ -23,7 +23,7 @@ const CSS_PHOTO_VERTICAL = css({
 });
 
 function ContactPage() {
-    const screenSize = useScreenSizeBreakpoints();
+    const screenSize = useScreenSizeHorizontalBreakpoints();
 
     return (
         <PageLayout title="Contact" isContentCentered>

@@ -2,7 +2,7 @@
 import { css, useTheme } from '@emotion/react';
 import {
     shouldTextBeSmaller,
-    useScreenSizeBreakpoints,
+    useScreenSizeHorizontalBreakpoints,
 } from '../../../hooks/useScreenSizeBreakpoints';
 import { convertLongMonthToShortMonth } from '../../../utils/date';
 import {
@@ -62,7 +62,7 @@ function TimelineLineAndDate(props: TimelineLineAndDateProps) {
     } = props;
 
     const theme = useTheme();
-    const screenSize = useScreenSizeBreakpoints();
+    const screenSize = useScreenSizeHorizontalBreakpoints();
 
     const horizontalGap = shouldTextBeSmaller(screenSize)
         ? HORIZONTAL_GAP_SMALL

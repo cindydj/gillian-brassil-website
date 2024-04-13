@@ -3,7 +3,7 @@ import { SerializedStyles, Theme, css, useTheme } from '@emotion/react';
 
 import ConditionalLink from '../../ConditionalLink/ConditionalLink';
 import { getBoldFontWeight } from '../../../utils/text_formatting';
-import { useScreenSizeBreakpoints } from '../../../hooks/useScreenSizeBreakpoints';
+import { useScreenSizeHorizontalBreakpoints } from '../../../hooks/useScreenSizeBreakpoints';
 import { Alignment, ButtonState, ButtonType, TextSize } from '../button_defs';
 
 export interface ActionButtonProps {
@@ -110,7 +110,7 @@ function ActionButton(props: ActionButtonProps) {
         textSize,
     } = props;
     const theme = useTheme();
-    const screenSize = useScreenSizeBreakpoints();
+    const screenSize = useScreenSizeHorizontalBreakpoints();
 
     const buttonType = buttonTypeInput ?? ButtonType.PRIMARY;
     const isDisabled = buttonStateOverride === ButtonState.DISABLED;

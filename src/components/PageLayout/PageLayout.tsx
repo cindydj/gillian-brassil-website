@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 
 import {
     shouldScreenBeColumn,
-    useScreenSizeBreakpoints,
+    useScreenSizeHorizontalBreakpoints,
 } from '../../hooks/useScreenSizeBreakpoints';
 import Header from './Header/Header';
 import ContactFooter from './ContactFooter';
@@ -40,17 +40,17 @@ function PageLayout(props: PageLayoutProps) {
         isContentCentered,
         isMainPage,
     } = props;
-    const screenSize = useScreenSizeBreakpoints();
+    const screenSize = useScreenSizeHorizontalBreakpoints();
 
     const cssPageContent = css({
         alignItems: isContentCentered ? 'center' : 'unset',
         display: 'flex',
         flex: 1,
         flexDirection: 'column',
-        margin: '0 auto 2rem auto',
+        margin: '0 auto',
         padding: shouldScreenBeColumn(screenSize) ? '1rem' : '2rem',
         textAlign: isContentCentered ? 'center' : 'unset',
-        width: '80vw',
+        width: shouldScreenBeColumn(screenSize) ? '90vw' : '80vw',
         maxWidth: maxWidth ?? '100%',
     });
 

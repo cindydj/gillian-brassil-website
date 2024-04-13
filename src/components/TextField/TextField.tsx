@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react';
-import { useScreenSizeBreakpoints } from '../../hooks/useScreenSizeBreakpoints';
+import { useScreenSizeHorizontalBreakpoints } from '../../hooks/useScreenSizeBreakpoints';
 import { getBoldFontWeight } from '../../utils/text_formatting';
 
 const CSS_TEXT_FIELD_WRAPPER = css({
@@ -43,7 +43,7 @@ function TextField(props: TextFieldProps) {
         placeholder,
         errorMessage,
     } = props;
-    const screenSize = useScreenSizeBreakpoints();
+    const screenSize = useScreenSizeHorizontalBreakpoints();
     const theme = useTheme();
 
     const cssTextFieldBox = css({

@@ -3,8 +3,13 @@ import '@emotion/react';
 declare module '@emotion/react' {
     export interface Theme {
         breakpoints: {
-            flexDirectionSwap: string;
-            textAndImageSize: string;
+            horizontal: {
+                flexDirectionSwap: string;
+                textAndImageSize: string;
+            };
+            vertical: {
+                homePageButtonVisibility: string;
+            };
         };
         colors: {
             primary: string;

@@ -1,56 +1,100 @@
 import { useTheme } from '@emotion/react';
 import { useMediaQuery } from '@react-hook/media-query';
 
-export enum ScreenSize {
-    SIZE_1 = 'size1',
-    SIZE_2 = 'size2',
-    SIZE_3 = 'size3',
+export enum ScreenSizeHorizontal {
+    SIZE_1,
+    SIZE_2,
+    SIZE_3,
 }
 
-export function shouldScreenBeColumn(screenSize: ScreenSize) {
-    return isSmallerThanOrEqual(screenSize, ScreenSize.SIZE_2);
+export enum ScreenSizeVertical {
+    SIZE_1,
+    SIZE_2,
 }
 
-export function shouldImageBeHorizontal(screenSize: ScreenSize) {
-    return isLargerThanOrEqual(screenSize, ScreenSize.SIZE_2);
+interface ScreenSizesHorizontal {
+    screenSize1: ScreenSizeHorizontal;
+    screenSize2: ScreenSizeHorizontal;
 }
 
-export function shouldTextBeSmaller(screenSize: ScreenSize) {
-    return isSmallerThanOrEqual(screenSize, ScreenSize.SIZE_1);
+interface ScreenSizesVertical {
+    screenSize1: ScreenSizeVertical;
+    screenSize2: ScreenSizeVertical;
 }
 
-function isSmallerThanOrEqual(
-    screenSize1: ScreenSize,
-    screenSize2: ScreenSize,
+type ScreenSizes = ScreenSizesHorizontal | ScreenSizesVertical;
+
+export function shouldHomePageBeMobileFriendly(
+    screenSize: ScreenSizeHorizontal,
 ) {
-    const screenSizeOrdering = Object.values(ScreenSize);
-    return (
-        screenSizeOrdering.findIndex((x) => x === screenSize1) <=
-        screenSizeOrdering.findIndex((x) => x === screenSize2)
-    );
+    return isSmallerThanOrEqual({
+        screenSize1: screenSize,
+        screenSize2: ScreenSizeHorizontal.SIZE_1,
+    });
 }
 
-function isLargerThanOrEqual(screenSize1: ScreenSize, screenSize2: ScreenSize) {
-    const screenSizeOrdering = Object.values(ScreenSize);
-    return (
-        screenSizeOrdering.findIndex((x) => x === screenSize1) >=
-        screenSizeOrdering.findIndex((x) => x === screenSize2)
-    );
+export function shouldHomePageButtonBeShown(screenSize: ScreenSizeVertical) {
+    return isLargerThanOrEqual({
+        screenSize1: screenSize,
+        screenSize2: ScreenSizeVertical.SIZE_2,
+    });
 }
 
-export function useScreenSizeBreakpoints() {
+export function shouldScreenBeColumn(screenSize: ScreenSizeHorizontal) {
+    return isSmallerThanOrEqual({
+        screenSize1: screenSize,
+        screenSize2: ScreenSizeHorizontal.SIZE_2,
+    });
+}
+
+export function shouldImageBeHorizontal(screenSize: ScreenSizeHorizontal) {
+    return isLargerThanOrEqual({
+        screenSize1: screenSize,
+        screenSize2: ScreenSizeHorizontal.SIZE_2,
+    });
+}
+
+export function shouldTextBeSmaller(screenSize: ScreenSizeHorizontal) {
+    return isSmallerThanOrEqual({
+        screenSize1: screenSize,
+        screenSize2: ScreenSizeHorizontal.SIZE_1,
+    });
+}
+
+function isSmallerThanOrEqual(sizes: ScreenSizes) {
+    const { screenSize1, screenSize2 } = sizes;
+    return screenSize1 <= screenSize2;
+}
+
+function isLargerThanOrEqual(sizes: ScreenSizes) {
+    const { screenSize1, screenSize2 } = sizes;
+    return screenSize1 >= screenSize2;
+}
+
+export function useScreenSizeHorizontalBreakpoints() {
     const theme = useTheme();
     const size1Max = useMediaQuery(
-        `(max-width: ${theme.breakpoints.textAndImageSize})`,
+        `(max-width: ${theme.breakpoints.horizontal.textAndImageSize})`,
     );
     const size2Max = useMediaQuery(
-        `(max-width: ${theme.breakpoints.flexDirectionSwap})`,
+        `(max-width: ${theme.breakpoints.horizontal.flexDirectionSwap})`,
     );
     if (size1Max) {
-        return ScreenSize.SIZE_1;
+        return ScreenSizeHorizontal.SIZE_1;
     }
     if (size2Max) {
-        return ScreenSize.SIZE_2;
+        return ScreenSizeHorizontal.SIZE_2;
     }
-    return ScreenSize.SIZE_3;
+    return ScreenSizeHorizontal.SIZE_3;
+}
+
+export function useScreenSizeVerticalBreakpoints() {
+    const theme = useTheme();
+    const size1Max = useMediaQuery(
+        `(max-height: ${theme.breakpoints.vertical.homePageButtonVisibility})`,
+    );
+    if (size1Max) {
+        return ScreenSizeVertical.SIZE_1;
+    }
+    return ScreenSizeVertical.SIZE_2;
 }

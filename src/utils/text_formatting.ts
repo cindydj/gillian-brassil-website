@@ -1,5 +1,5 @@
 import {
-    ScreenSize,
+    ScreenSizeHorizontal,
     shouldTextBeSmaller,
 } from '../hooks/useScreenSizeBreakpoints';
 
@@ -15,7 +15,7 @@ export function getCtrlOrCmd() {
 }
 
 export function getBoldFontWeight(
-    screenSize: ScreenSize,
+    screenSize: ScreenSizeHorizontal,
     isExtraBold?: boolean,
 ) {
     const boldFontWeight = isExtraBold ? 700 : 600;

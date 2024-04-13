@@ -4,7 +4,7 @@ import { ExperiencesType } from '../../../data/experiences';
 import { useState } from 'react';
 import {
     shouldTextBeSmaller,
-    useScreenSizeBreakpoints,
+    useScreenSizeHorizontalBreakpoints,
 } from '../../../hooks/useScreenSizeBreakpoints';
 import { VERTICAL_GAP } from './timeline_defs';
 import TimelineLineAndDate from './TimelineLineAndDate';
@@ -33,7 +33,7 @@ interface TimelineProps {
 function Timeline(props: TimelineProps) {
     const { events } = props;
     const [hoveredEventIndex, setHoveredEventIndex] = useState<number>();
-    const screenSize = useScreenSizeBreakpoints();
+    const screenSize = useScreenSizeHorizontalBreakpoints();
 
     return (
         <div

@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react';
 import ConditionalLink from '../ConditionalLink/ConditionalLink';
-import { useScreenSizeBreakpoints } from '../../hooks/useScreenSizeBreakpoints';
+import { useScreenSizeHorizontalBreakpoints } from '../../hooks/useScreenSizeBreakpoints';
 import { getBoldFontWeight } from '../../utils/text_formatting';
 
 export enum MenuItemType {
@@ -27,7 +27,7 @@ function DropdownMenuItem(props: DropdownMenuItemProps) {
         isDisabled,
         menuItemType: menuItemTypeInput,
     } = props;
-    const screenSize = useScreenSizeBreakpoints();
+    const screenSize = useScreenSizeHorizontalBreakpoints();
     const theme = useTheme();
 
     const menuItemType = menuItemTypeInput ?? MenuItemType.WHITE_BACKGROUND;

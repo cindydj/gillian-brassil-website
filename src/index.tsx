@@ -25,6 +25,14 @@ const CSS_GLOBAL_TEXT_STYLES = css({
         fontFamily:
             "source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace",
     },
+    // title is used for displaying Gillian's name on the home page mobile version.
+    title: {
+        display: 'block',
+        fontFamily: THEME.fonts.text,
+        fontSize: '3.8rem',
+        fontWeight: 'bold',
+        color: THEME.colors.primary,
+    },
     // h1 and h2 are reserved for the banner typography.
     h1: {
         fontFamily: THEME.fonts.header,

@@ -24,7 +24,6 @@ const CSS_HOME_NAVIGATION = css({
     alignItems: 'center',
     display: 'flex',
     cursor: 'pointer',
-    fontSize: '2.5rem',
     textDecoration: 'none',
     transition: '.2s all',
     whiteSpace: 'nowrap',
@@ -88,9 +87,10 @@ function Header(props: HeaderProps) {
             >
                 <div css={CSS_HOME_NAVIGATION_WRAPPER}>
                     <Link
-                        css={[CSS_HOME_NAVIGATION]}
+                        css={CSS_HOME_NAVIGATION}
                         style={{
                             fontFamily: 'Spectral',
+                            fontSize: isMenu ? '2rem' : '2.5rem',
                             color: theme.colors.primary,
                         }}
                         to="/"

@@ -27,12 +27,17 @@ const PARTIAL_MESSAGE_COLOR = '#0463c2';
 
 export const THEME = {
     breakpoints: {
-        // Breakpoint at which pages that are flex direction
-        // row should switch to column.
-        flexDirectionSwap: '900px',
-        // Breakpoint at which text and horizontal images will have to be adjusted.
-        // NOTE: This should match the media query value in index.tsx.
-        textAndImageSize: '700px',
+        horizontal: {
+            // Breakpoint at which pages that are flex direction
+            // row should switch to column.
+            flexDirectionSwap: '900px',
+            // Breakpoint at which text and horizontal images will have to be adjusted.
+            // NOTE: This should match the media query value in index.tsx.
+            textAndImageSize: '700px',
+        },
+        vertical: {
+            homePageButtonVisibility: '740px',
+        },
     },
     colors: {
         primary: BLUE_7,
