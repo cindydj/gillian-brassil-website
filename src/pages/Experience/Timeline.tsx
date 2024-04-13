@@ -3,6 +3,7 @@
 import { css, useTheme } from '@emotion/react';
 import { ExperiencesType } from '../../data/experiences';
 
+const LOGO_SIZE = '40rem';
 const GENERAL_NODE_SIZE = '1.2rem';
 const LARGE_NODE_SIZE = '1.8rem';
 const VERTICAL_GAP = '2rem';

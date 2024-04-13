@@ -7,6 +7,7 @@ import { ReactComponent as LinkedinIconBlack } from '../../assets/icons/linkedin
 import { ReactComponent as MailIconColored } from '../../assets/icons/mail.svg';
 import { ReactComponent as MailIconBlack } from '../../assets/icons/mail_black.svg';
 import { LINKEDIN_URL, X_URL } from '../../data/contact';
+import EmailLink from '../EmailLink/EmailLink';
 
 const ICON_DIMENSION_LARGE = '3rem';
 const ICON_DIMENSION_SMALL = '2rem';
@@ -40,7 +41,6 @@ function ContactFooter(props: ContactFooterProps) {
         : ICON_DIMENSION_SMALL;
     const LinkedinIcon = isMainPage ? LinkedinIconColored : LinkedinIconBlack;
     const XIcon = isMainPage ? XIconColored : XIconBlack;
-    const MailIcon = isMainPage ? MailIconColored : MailIconBlack;
 
     return (
         <div css={CSS_FOOTER}>
@@ -65,9 +65,10 @@ function ContactFooter(props: ContactFooterProps) {
                 <a href={X_URL} target="_blank" rel="noopener noreferrer">
                     <XIcon width={iconDimension} height={iconDimension} />
                 </a>
-                <a href="/contact">
-                    <MailIcon width={iconDimension} height={iconDimension} />
-                </a>
+                <EmailLink
+                    dimension={iconDimension}
+                    isIconColored={!!isMainPage}
+                />
             </div>
             <div css={CSS_COPYRIGHT_FOOTNOTE}>
                 © Copyright 2024 Gillian Rose Brassil

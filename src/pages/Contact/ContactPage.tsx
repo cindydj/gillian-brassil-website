@@ -7,6 +7,7 @@ import {
     shouldImageBeHorizontal,
     useScreenSizeBreakpoints,
 } from '../../hooks/useScreenSizeBreakpoints';
+import EmailLink from '../../components/EmailLink/EmailLink';
 
 const CSS_PHOTO_HORIZONTAL = css({
     paddingTop: '3rem',
@@ -31,8 +32,7 @@ function ContactPage() {
                 me on X at <a href={X_URL}>@Gillian_Brassil</a>.
                 <br />
                 <br />
-                You can also reach me via email(TODO: implement javascript
-                function)!
+                You can also reach me via <EmailLink text="email" />!
             </span>
             {shouldImageBeHorizontal(screenSize) ? (
                 <img

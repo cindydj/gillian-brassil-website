@@ -4,8 +4,6 @@ import PageLayout from '../../components/PageLayout/PageLayout';
 import { EXPERIENCES } from '../../data/experiences';
 import Timeline from './Timeline';
 
-const LOGO_SIZE = '40rem';
-
 const CSS_INTRO = css({
     paddingBottom: '3rem',
     textAlign: 'center',

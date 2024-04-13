@@ -1,3 +1,12 @@
+import BUSINESS_INSIDER_LOGO from '../assets/images/experience/business_insider.png';
+import CNBC_LOGO from '../assets/images/experience/cnbc.png';
+import GOVSIGHT_LOGO from '../assets/images/experience/govsight.jpeg';
+import KZSU_LOGO from '../assets/images/experience/kzsu.png';
+import LOWELL_SUN_LOGO from '../assets/images/experience/lowell_sun.png';
+import PENINSULA_PRESS_LOGO from '../assets/images/experience/peninsula_press.png';
+import SAN_JOSE_MERCURY_NEWS_LOGO from '../assets/images/experience/san_jose_mercury_news.jpeg';
+import STANFORD_DAILY_LOGO from '../assets/images/experience/stanford_daily.png';
+
 export type ExperiencesType = {
     name: string;
     logo?: string;
@@ -30,6 +39,7 @@ export const EXPERIENCES: ExperiencesType = [
         role: 'Editor-in-Chief',
         startDate: 'October 2019',
         endDate: 'June 2021',
+        logo: GOVSIGHT_LOGO,
     },
     {
         name: 'Business Insider',
@@ -37,6 +47,7 @@ export const EXPERIENCES: ExperiencesType = [
         role: 'Editing Fellow',
         startDate: 'January 2020',
         endDate: 'May 2020',
+        logo: BUSINESS_INSIDER_LOGO,
     },
     {
         name: 'The Stanford Daily',
@@ -44,6 +55,7 @@ export const EXPERIENCES: ExperiencesType = [
         role: 'Managing Editor and Reporter',
         startDate: 'April 2016',
         endDate: 'December 2019',
+        logo: STANFORD_DAILY_LOGO,
     },
     {
         name: 'KZSU 90.1 FM',
@@ -51,6 +63,7 @@ export const EXPERIENCES: ExperiencesType = [
         role: 'Lead News Correspondent',
         startDate: 'May 2017',
         endDate: 'December 2019',
+        logo: KZSU_LOGO,
     },
     {
         name: 'Peninsula Press',
@@ -58,6 +71,7 @@ export const EXPERIENCES: ExperiencesType = [
         role: 'Multimedia and Data Reporter',
         startDate: 'September 2018',
         endDate: 'December 2019',
+        logo: PENINSULA_PRESS_LOGO,
     },
     {
         name: 'CNBC',
@@ -65,6 +79,7 @@ export const EXPERIENCES: ExperiencesType = [
         role: 'Breaking News Reporter',
         startDate: 'April 2018',
         endDate: 'August 2018',
+        logo: CNBC_LOGO,
     },
     {
         name: 'San Jose Mercury News',
@@ -72,6 +87,7 @@ export const EXPERIENCES: ExperiencesType = [
         role: 'Metro Reporter',
         startDate: 'June 2017',
         endDate: 'September 2017',
+        logo: SAN_JOSE_MERCURY_NEWS_LOGO,
     },
     {
         name: 'Lowell Sun',
@@ -79,5 +95,6 @@ export const EXPERIENCES: ExperiencesType = [
         role: 'Metro Reporter',
         startDate: 'June 2016',
         endDate: 'August 2016',
+        logo: LOWELL_SUN_LOGO,
     },
 ];
