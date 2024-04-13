@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import PageLayout from '../../components/PageLayout/PageLayout';
 import { EXPERIENCES } from '../../data/experiences';
-import Timeline from './Timeline';
+import Timeline from './Timeline/Timeline';
 
 const CSS_INTRO = css({
     paddingBottom: '3rem',

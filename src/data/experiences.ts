@@ -11,7 +11,7 @@ export type ExperiencesType = {
     name: string;
     logo?: string;
     details?: string;
-    url?: string;
+    url: string;
     role?: string;
     startDate: string;
     endDate: string;
