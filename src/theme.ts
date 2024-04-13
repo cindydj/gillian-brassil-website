@@ -1,5 +1,6 @@
 // Neutral colors
-const OFF_WHITE = '#FFF8F2';
+const OFF_WHITE = '#fff8f2';
+const OFF_WHITE_EMPHASIS = '#f1e4da';
 const GRAY_1 = '#ededed';
 const GRAY_2 = '#dedede';
 const GRAY_3 = '#bbbbbb';

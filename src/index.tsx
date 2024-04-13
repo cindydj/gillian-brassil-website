@@ -51,9 +51,17 @@ const CSS_GLOBAL_TEXT_STYLES = css({
     // The size is slightly smaller than the default text size.
     h4: {
         fontFamily: THEME.fonts.text,
-        fontSize: '1.4rem',
+        fontSize: '1.3rem',
         fontWeight: 'normal',
         margin: '0.5rem 0 0 0',
+    },
+    // h5 is used for displaying dates in the timeline.
+    h5: {
+        fontFamily: THEME.fonts.text,
+        fontSize: '1.3rem',
+        fontWeight: 'normal',
+        color: THEME.colors.neutral.grey_5,
+        margin: 0,
     },
     /**
      * Media queries to adjust font sizes for different screen sizes.
