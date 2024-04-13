@@ -60,7 +60,7 @@ const CSS_GLOBAL_TEXT_STYLES = css({
         fontFamily: THEME.fonts.text,
         fontSize: '1.3rem',
         fontWeight: 'normal',
-        color: THEME.colors.neutral.grey_5,
+        color: THEME.colors.neutral.grey_4,
         margin: 0,
     },
     /**
@@ -76,6 +76,9 @@ const CSS_GLOBAL_TEXT_STYLES = css({
         },
         h4: {
             fontSize: '1.1rem',
+        },
+        h5: {
+            fontSize: '0.9rem',
         },
     },
 });

@@ -16,7 +16,7 @@ function ExperiencePage() {
         <PageLayout title="Experience">
             <div css={CSS_WRAPPER}>
                 <div css={CSS_INTRO}>
-                    Check out Gillian's clips, linked below!
+                    Explore Gillian Brassil's clips, linked below!
                 </div>
                 <Timeline events={EXPERIENCES} />
             </div>

@@ -34,8 +34,9 @@ export const EXPERIENCES: ExperiencesType = [
     },
     {
         name: 'GovSight',
+        url: 'https://medium.com/@gbrassil',
         details:
-            "The GovSight website now defunct. Brassil's GovSight Medium page is linked instead.",
+            "Brassil's GovSight Medium page is linked instead.\nThe GovSight website now defunct.",
         role: 'Editor-in-Chief',
         startDate: 'October 2019',
         endDate: 'June 2021',

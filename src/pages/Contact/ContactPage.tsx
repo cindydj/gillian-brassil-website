@@ -10,7 +10,7 @@ import {
 import EmailLink from '../../components/EmailLink/EmailLink';
 
 const CSS_PHOTO_HORIZONTAL = css({
-    paddingTop: '3rem',
+    paddingTop: '2rem',
     width: '40rem',
 });
 
