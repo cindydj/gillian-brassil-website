@@ -10,6 +10,7 @@ import { THEME } from './theme';
 import AboutPage from './pages/About/AboutPage';
 import ContactPage from './pages/Contact/ContactPage';
 import ExperiencePage from './pages/Experience/ExperiencePage';
+import { BASE_PATH } from './utils/router';
 
 const CSS_GLOBAL_TEXT_STYLES = css({
     body: {
@@ -93,23 +94,23 @@ const CSS_GLOBAL_TEXT_STYLES = css({
 
 const router = createBrowserRouter([
     {
-        path: '/admin',
+        path: BASE_PATH + '/admin',
         lazy: () => import('./admin/CMS'),
     },
     {
-        path: '/about',
+        path: BASE_PATH + '/about',
         element: <AboutPage />,
     },
     {
-        path: '/experience',
+        path: BASE_PATH + '/experience',
         element: <ExperiencePage />,
     },
     {
-        path: '/contact',
+        path: BASE_PATH + '/contact',
         element: <ContactPage />,
     },
     {
-        path: '/',
+        path: BASE_PATH,
         element: <HomePage />,
         errorElement: <ErrorPage />,
     },
