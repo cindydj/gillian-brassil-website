@@ -4,8 +4,6 @@ import { ReactComponent as XIconColored } from '../../assets/icons/X.svg';
 import { ReactComponent as XIconBlack } from '../../assets/icons/X_black.svg';
 import { ReactComponent as LinkedinIconColored } from '../../assets/icons/linkedin.svg';
 import { ReactComponent as LinkedinIconBlack } from '../../assets/icons/linkedin_black.svg';
-import { ReactComponent as MailIconColored } from '../../assets/icons/mail.svg';
-import { ReactComponent as MailIconBlack } from '../../assets/icons/mail_black.svg';
 import { LINKEDIN_URL, X_URL } from '../../data/contact';
 import EmailLink from '../EmailLink/EmailLink';
 
