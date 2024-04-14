@@ -8,6 +8,7 @@ import { convertToPathName } from '../../../utils/url';
 import { useLocation } from 'react-router';
 import NavigationButton from '../../Button/NavigationButton/NavigationButton';
 import { ButtonState } from '../../Button/button_defs';
+import { createInternalUrl } from '../../../utils/router';
 
 const PAGE_NAMES = ['About', 'Experience', 'Contact'];
 
@@ -28,7 +29,7 @@ function NavigationOptionItem(props: NavigationOptionItemProps) {
     const { pageName, isMenu } = props;
     const location = useLocation();
 
-    const link = convertToPathName(pageName);
+    const link = createInternalUrl(convertToPathName(pageName));
     let isOptionSelected = convertToPathName(pageName) === location.pathname;
 
     return (

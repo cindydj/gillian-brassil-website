@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MiddleDot from '../../MiddleDot/MiddleDot';
 import NavigationOptions from './NavigationOptions';
+import { createInternalUrl } from '../../../utils/router';
 
 const CSS_HEADER_CONTEXT = css({
     alignItems: 'center',
@@ -93,7 +94,7 @@ function Header(props: HeaderProps) {
                             fontSize: isMenu ? '2rem' : '2.5rem',
                             color: theme.colors.primary,
                         }}
-                        to="/"
+                        to={createInternalUrl('/')}
                     >
                         g<MiddleDot isSmall />b
                     </Link>

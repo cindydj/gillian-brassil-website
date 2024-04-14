@@ -10,6 +10,7 @@ import {
     useScreenSizeVerticalBreakpoints,
 } from '../../hooks/useScreenSizeBreakpoints';
 import PROFILE_PICTURE_PATH from '../../assets/images/gillian_home_page_mobile.jpg';
+import { createInternalUrl } from '../../utils/router';
 
 const CSS_PROFILE_IMAGE = css({
     objectFit: 'contain',
@@ -57,6 +58,8 @@ function HomePage() {
         color: theme.colors.text.emphasis,
     };
 
+    const experienceLink = createInternalUrl('/experience');
+
     return shouldHomePageBeMobileFriendly(screenSizeHorizontal) ? (
         <PageLayout
             fullWidthChildren={
@@ -81,7 +84,7 @@ function HomePage() {
                 </div>
                 {shouldHomePageButtonBeShown(screenSizeVertical) && (
                     <div css={CSS_PRIMARY_BUTTON}>
-                        <ActionButton link="/experience">
+                        <ActionButton link={experienceLink}>
                             See experiences
                         </ActionButton>
                     </div>
@@ -98,7 +101,7 @@ function HomePage() {
                     holding power to account.
                 </div>
                 <div css={CSS_PRIMARY_BUTTON}>
-                    <ActionButton link="/experience">
+                    <ActionButton link={experienceLink}>
                         See experiences
                     </ActionButton>
                 </div>
