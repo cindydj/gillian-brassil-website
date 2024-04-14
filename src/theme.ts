@@ -36,6 +36,7 @@ export const THEME = {
             textAndImageSize: '700px',
         },
         vertical: {
+            // Breakpoint at which the primary button should be added to the home page.
             homePageButtonVisibility: '740px',
         },
     },
