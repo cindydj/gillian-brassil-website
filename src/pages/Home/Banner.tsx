@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react';
-import BANNER_PROFILE_PICTURE from '../../assets/images/gillian_banner.jpg';
+import BANNER_PROFILE_PICTURE from '../../assets/images/gillian_home_page.png';
 import PRONUNCIATION_AUDIO_FILE from '../../assets/audio/gillian_pronunciation.mp3';
 import MiddleDot from '../../components/MiddleDot/MiddleDot';
 import { ReactComponent as VolumeIcon } from '../../assets/icons/volume_up.svg';
@@ -45,10 +45,10 @@ const CSS_SUBTITLE = css({
 
 const CSS_PROFILE_PICTURE = css({
     height: '23vw',
-    width: '23vw',
+    width: '30vw',
     objectFit: 'cover',
-    objectPosition: '0 100%',
-    clipPath: 'polygon(30% 0, 0 100%, 100% 100%, 100% 0)',
+    objectPosition: '0 70%',
+    clipPath: 'polygon(40% 0, 10% 100%, 100% 100%, 100% 0)',
 });
 
 function Banner() {

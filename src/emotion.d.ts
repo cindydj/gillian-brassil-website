@@ -6,9 +6,12 @@ declare module '@emotion/react' {
             horizontal: {
                 flexDirectionSwap: string;
                 textAndImageSize: string;
+                smallScreenSize: string;
             };
             vertical: {
+                smallScreenHomePageButtonVisibility: string;
                 homePageButtonVisibility: string;
+                smallScreenSize: string;
             };
         };
         colors: {

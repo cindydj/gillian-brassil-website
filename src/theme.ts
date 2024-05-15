@@ -34,10 +34,18 @@ export const THEME = {
             // Breakpoint at which text and horizontal images will have to be adjusted.
             // NOTE: This should match the media query value in index.tsx.
             textAndImageSize: '700px',
+            // Breakpoint at which the name on the home page will overflow on the mobile version.
+            smallScreenSize: '410px',
         },
         vertical: {
+            // Breakpoint at which the primary button should be added to the home page,
+            // when the screen is considered "small", i.e. the text is smaller.
+            smallScreenHomePageButtonVisibility: '652px',
             // Breakpoint at which the primary button should be added to the home page.
-            homePageButtonVisibility: '740px',
+            homePageButtonVisibility: '746px',
+            // Along with the horizontal counterpart, this is the breakpoint at which
+            // the page will overflow on the mobile version if the name overflows.
+            smallScreenSize: '860px',
         },
     },
     colors: {

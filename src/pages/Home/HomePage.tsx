@@ -4,16 +4,24 @@ import ActionButton from '../../components/Button/ActionButton/ActionButton';
 import { css, useTheme } from '@emotion/react';
 import Banner from './Banner';
 import {
+    isScreenVerySmall,
     shouldHomePageBeMobileFriendly,
     shouldHomePageButtonBeShown,
     useScreenSizeHorizontalBreakpoints,
     useScreenSizeVerticalBreakpoints,
 } from '../../hooks/useScreenSizeBreakpoints';
-import PROFILE_PICTURE_PATH from '../../assets/images/gillian_home_page_mobile.jpg';
+import PROFILE_PICTURE_PATH from '../../assets/images/gillian_home_page_mobile.png';
 import { createInternalUrl } from '../../utils/router';
 
+const CSS_PROFILE_IMAGE_WRAPPER = css({
+    overflow: 'hidden',
+    width: '100%',
+});
+
 const CSS_PROFILE_IMAGE = css({
-    objectFit: 'contain',
+    objectFit: 'cover',
+    width: '100%',
+    height: '35vh',
 });
 
 const CSS_INTRO_WRAPPER = css({
@@ -40,7 +48,6 @@ const CSS_MOBILE_WRAPPER = css({
 });
 
 const CSS_SUBTITLE = css({
-    fontSize: '5.5vw',
     marginTop: '1rem',
     fontWeight: 'bold',
 });
@@ -49,10 +56,18 @@ const CSS_PRIMARY_BUTTON = css({
     marginTop: '2rem',
 });
 
+const CSS_PRIMARY_BUTTON_FOR_SMALL_SCREEN = css({
+    marginTop: '1rem',
+});
+
 function HomePage() {
     const theme = useTheme();
     const screenSizeHorizontal = useScreenSizeHorizontalBreakpoints();
     const screenSizeVertical = useScreenSizeVerticalBreakpoints();
+    const isScreenVerySmallBoolean = isScreenVerySmall(
+        screenSizeHorizontal,
+        screenSizeVertical,
+    );
 
     const emphasisStyle = {
         color: theme.colors.text.emphasis,
@@ -63,27 +78,50 @@ function HomePage() {
     return shouldHomePageBeMobileFriendly(screenSizeHorizontal) ? (
         <PageLayout
             fullWidthChildren={
-                <img
-                    src={PROFILE_PICTURE_PATH}
-                    alt="Gillian Brassil"
-                    css={CSS_PROFILE_IMAGE}
-                />
+                <div css={CSS_PROFILE_IMAGE_WRAPPER}>
+                    <img
+                        src={PROFILE_PICTURE_PATH}
+                        alt="Gillian Brassil"
+                        css={CSS_PROFILE_IMAGE}
+                    />
+                </div>
             }
             isContentCentered
             isMainPage
         >
             <div css={CSS_MOBILE_WRAPPER}>
-                <title>Gillian Brassil</title>
+                {/* 411px is the smallest width where the name fits on one line. */}
+                <title
+                    style={{
+                        fontSize: isScreenVerySmallBoolean
+                            ? '2.5rem'
+                            : '3.8rem',
+                    }}
+                >
+                    Gillian Brassil
+                </title>
                 <div
                     css={CSS_SUBTITLE}
                     style={{
                         color: theme.colors.neutral.grey_4,
+                        fontSize: isScreenVerySmallBoolean
+                            ? '1.8rem'
+                            : '2.25rem',
                     }}
                 >
                     National political correspondent
                 </div>
-                {shouldHomePageButtonBeShown(screenSizeVertical) && (
-                    <div css={CSS_PRIMARY_BUTTON}>
+                {shouldHomePageButtonBeShown(
+                    screenSizeHorizontal,
+                    screenSizeVertical,
+                ) && (
+                    <div
+                        css={
+                            isScreenVerySmallBoolean
+                                ? CSS_PRIMARY_BUTTON_FOR_SMALL_SCREEN
+                                : CSS_PRIMARY_BUTTON
+                        }
+                    >
                         <ActionButton link={experienceLink}>
                             See experiences
                         </ActionButton>
