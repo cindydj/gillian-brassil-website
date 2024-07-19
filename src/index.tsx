@@ -13,6 +13,9 @@ import ExperiencePage from './pages/Experience/ExperiencePage';
 import { createInternalUrl } from './utils/router';
 
 const CSS_GLOBAL_TEXT_STYLES = css({
+    html: {
+        backgroundColor: THEME.colors.background.general,
+    },
     body: {
         margin: 0,
         fontFamily: `${THEME.fonts.text}, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif`,
