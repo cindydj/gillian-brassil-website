@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from './pages/Error/ErrorPage';
 import HomePage from './pages/Home/HomePage';
 import { css, Global, ThemeProvider } from '@emotion/react';
@@ -92,7 +92,7 @@ const CSS_GLOBAL_TEXT_STYLES = css({
     },
 });
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: createInternalUrl('/admin'),
         lazy: () => import('./admin/CMS'),
