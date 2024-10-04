@@ -21,12 +21,22 @@ interface ConditionalLinkProps {
      */
     link: string | undefined;
     className?: string;
+    style?: React.CSSProperties;
     onClick?: () => void;
     showUnderline?: boolean;
+    ariaLabel?: string;
 }
 
 function ConditionalLink(props: ConditionalLinkProps) {
-    const { children, link, className, onClick, showUnderline } = props;
+    const {
+        children,
+        link,
+        className,
+        style,
+        onClick,
+        showUnderline,
+        ariaLabel,
+    } = props;
 
     const cssConditionalLink = showUnderline ? null : CSS_TEXT_UNDERLINE;
 
@@ -37,7 +47,14 @@ function ConditionalLink(props: ConditionalLinkProps) {
                     to={link}
                     className={className}
                     css={[CSS_LINK, cssConditionalLink]}
+                    style={style}
                     onClick={onClick}
+                    // This is to indicate to accessibility readers that this
+                    // link is not a same-page link. Because we are using HashRouter,
+                    // all links will have # in it, which accessibility readers
+                    // will think is a same-page link and expect a matching header.
+                    role="button"
+                    aria-label={ariaLabel}
                 >
                     {children}
                 </Link>
@@ -48,9 +65,11 @@ function ConditionalLink(props: ConditionalLinkProps) {
                 to={link}
                 className={className}
                 css={cssConditionalLink}
+                style={style}
                 target="_blank"
                 rel="noreferrer noopener"
                 onClick={onClick}
+                aria-label={ariaLabel}
             >
                 {children}
             </Link>

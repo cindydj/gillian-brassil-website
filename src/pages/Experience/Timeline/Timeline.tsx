@@ -17,7 +17,7 @@ const CSS_TIMELINE = css({
 const CSS_TIMELINE_EVENT_WRAPPER = css({
     display: 'flex',
     marginBottom: VERTICAL_GAP,
-    ':nth-last-child(1) .timeline-node-parent::after': {
+    ':nth-last-of-type(1) .timeline-node-parent::after': {
         display: 'none',
     },
 });

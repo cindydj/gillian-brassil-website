@@ -34,7 +34,7 @@ function AboutPage() {
                     css={CSS_PHOTO}
                     src={GILLIAN_PHOTO}
                     width={isSmallScreen ? '200rem' : '400rem'}
-                    alt="Gillian"
+                    alt="Gillian headshot"
                 />
                 Gillian Rose Brassil is a national political correspondent in
                 Washington D.C. for McClatchy's five California papers: The

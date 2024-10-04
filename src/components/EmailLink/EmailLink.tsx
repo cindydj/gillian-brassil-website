@@ -15,6 +15,7 @@ function EmailLinkWrapper(props: EmailLinkWrapperProps) {
             href={`mailto:${GILLIAN_EMAIL}`}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Opens empty email addressed to Gillian in new tab"
         >
             {children}
         </a>

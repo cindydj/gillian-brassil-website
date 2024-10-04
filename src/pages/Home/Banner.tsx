@@ -35,12 +35,16 @@ const CSS_VOLUME_ICON = css({
 });
 
 const CSS_TITLE = css({
+    fontWeight: 'bold',
+    margin: 0,
     fontSize: '5vw',
 });
 
 const CSS_SUBTITLE = css({
     fontSize: '2.5vw',
-    marginTop: '-0.7vw',
+    margin: '-0.7vw 0 0 0',
+    fontStyle: 'italic',
+    fontWeight: 500,
 });
 
 const CSS_PROFILE_PICTURE = css({
@@ -81,7 +85,13 @@ function Banner() {
         >
             <div css={CSS_BANNER_TEXT}>
                 <div css={CSS_NAME}>
-                    <h1 css={CSS_TITLE}>
+                    <div
+                        css={CSS_TITLE}
+                        style={{
+                            fontFamily: theme.fonts.header,
+                        }}
+                        aria-label="Gillian Brassil"
+                    >
                         gil
                         <MiddleDot />
                         li
@@ -89,11 +99,18 @@ function Banner() {
                         an bras
                         <MiddleDot />
                         sil
-                    </h1>
+                    </div>
                     <VolumeIcon
                         css={CSS_VOLUME_ICON}
                         fill={theme.colors.text.light}
                         onClick={() => setIsAudioPlaying(true)}
+                        aria-label="Icon to play pronunciation"
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                                setIsAudioPlaying(true);
+                            }
+                        }}
                     />
                     {isAudioPlaying && (
                         <audio
@@ -103,9 +120,14 @@ function Banner() {
                         />
                     )}
                 </div>
-                <h2 css={CSS_SUBTITLE}>
+                <div
+                    css={CSS_SUBTITLE}
+                    style={{
+                        fontFamily: theme.fonts.header,
+                    }}
+                >
                     writer, multimedia reporter, political correspondant
-                </h2>
+                </div>
             </div>
             <img
                 src={BANNER_PROFILE_PICTURE}

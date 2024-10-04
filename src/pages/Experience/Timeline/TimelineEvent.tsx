@@ -65,18 +65,18 @@ function TimelineEvent(props: TimelineEventProps) {
                 </div>
             </a>
             {!!role && (
-                <h4
+                <h2
                     style={{
                         color: theme.colors.text.dark,
                     }}
                 >
                     {role}
-                </h4>
+                </h2>
             )}
             {!!details && (
                 <div css={CSS_DETAILS}>
                     {details.split('\n').map((line) => {
-                        return <div>{line}</div>;
+                        return <div key={line}>{line}</div>;
                     })}
                 </div>
             )}

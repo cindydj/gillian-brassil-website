@@ -40,6 +40,9 @@ const CSS_DATE = css({
     justifyContent: 'flex-end',
     textAlign: 'end',
     width: ONE_SIDE_WIDTH,
+    fontSize: '1.3rem',
+    fontWeight: 'normal',
+    margin: 0,
 });
 
 interface TimelineLineAndDateProps {
@@ -93,8 +96,17 @@ function TimelineLineAndDate(props: TimelineLineAndDateProps) {
             `}
             className="timeline-node-parent"
         >
-            <h5
-                css={CSS_DATE}
+            <div
+                css={css`
+                    ${CSS_DATE};
+                    color: ${theme.colors.neutral.grey_4};
+                    font-family: ${theme.fonts.text};
+
+                    @media screen and (max-width: ${theme.breakpoints.horizontal
+                            .textAndImageSize}) {
+                        font-size: 0.9rem;
+                    }
+                `}
                 style={{
                     right: `calc(100% + ${horizontalGap})`,
                 }}
@@ -102,7 +114,7 @@ function TimelineLineAndDate(props: TimelineLineAndDateProps) {
                 {displayedStartDate} -
                 <br />
                 {displayedEndDate}&nbsp;&nbsp;
-            </h5>
+            </div>
             <a
                 href={url}
                 target="_blank"

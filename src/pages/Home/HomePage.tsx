@@ -33,7 +33,7 @@ const CSS_INTRO_WRAPPER = css({
 });
 
 const CSS_INTRO_BLURB = css({
-    fontSize: '2.5rem',
+    fontSize: '2.4rem',
     fontWeight: 'bold',
     marginTop: '1.5rem',
     maxWidth: '60%',

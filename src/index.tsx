@@ -34,60 +34,34 @@ const CSS_GLOBAL_TEXT_STYLES = css({
         fontWeight: 'bold',
         color: THEME.colors.primary,
     },
-    // h1 and h2 are reserved for the banner typography.
+    // h1 is used for titles in the page content.
     h1: {
-        fontFamily: THEME.fonts.header,
-        fontSize: '5rem',
-        fontWeight: 'bold',
-        margin: 0,
-    },
-    h2: {
-        fontFamily: THEME.fonts.header,
-        fontSize: '2.5rem',
-        fontStyle: 'italic',
-        fontWeight: 500,
-        margin: 0,
-    },
-    // h3 is used for titles in the page content.
-    h3: {
         color: THEME.colors.text.header,
         fontFamily: THEME.fonts.text,
         fontSize: '3.5rem',
         fontWeight: 'bold',
         margin: 0,
     },
-    // h4 is used for subtitles in the Experience page.
-    // The size is slightly smaller than the default text size.
-    h4: {
+    // h2 is used for subtitles. The size is slightly smaller than the default text size.
+    h2: {
         fontFamily: THEME.fonts.text,
         fontSize: '1.3rem',
         fontWeight: 'normal',
         margin: '0.5rem 0 0 0',
     },
-    // h5 is used for displaying dates in the timeline.
-    h5: {
-        fontFamily: THEME.fonts.text,
-        fontSize: '1.3rem',
-        fontWeight: 'normal',
-        color: THEME.colors.neutral.grey_4,
-        margin: 0,
-    },
     /**
      * Media queries to adjust font sizes for different screen sizes.
-     * NOTE: This should match the value of the textSize breakpoint in theme.ts.
+     * NOTE: This should match the value of the textAndImageSize breakpoint in theme.ts.
      */
     '@media screen and (max-width: 700px)': {
         body: {
             fontSize: '1.2rem',
         },
-        h3: {
+        h1: {
             fontSize: '2rem',
         },
-        h4: {
+        h2: {
             fontSize: '1.1rem',
-        },
-        h5: {
-            fontSize: '0.9rem',
         },
     },
 });

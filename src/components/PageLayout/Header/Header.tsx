@@ -2,10 +2,10 @@
 import { css, useTheme } from '@emotion/react';
 import { useState } from 'react';
 
-import { Link } from 'react-router-dom';
 import MiddleDot from '../../MiddleDot/MiddleDot';
 import NavigationOptions from './NavigationOptions';
 import { createInternalUrl } from '../../../utils/router';
+import ConditionalLink from '../../ConditionalLink/ConditionalLink';
 
 const CSS_HEADER_CONTEXT = css({
     alignItems: 'center',
@@ -25,10 +25,8 @@ const CSS_HOME_NAVIGATION = css({
     alignItems: 'center',
     display: 'flex',
     cursor: 'pointer',
-    textDecoration: 'none',
-    transition: '.2s all',
+    fontFamily: 'Spectral',
     whiteSpace: 'nowrap',
-    width: 'fit-content',
 });
 
 const CSS_MENU_ICON = css({
@@ -87,17 +85,17 @@ function Header(props: HeaderProps) {
                 }}
             >
                 <div css={CSS_HOME_NAVIGATION_WRAPPER}>
-                    <Link
+                    <ConditionalLink
                         css={CSS_HOME_NAVIGATION}
                         style={{
-                            fontFamily: 'Spectral',
                             fontSize: isMenu ? '2rem' : '2.5rem',
                             color: theme.colors.primary,
                         }}
-                        to={createInternalUrl('/')}
+                        link={createInternalUrl('/')}
+                        ariaLabel="Gillian Brassil logo"
                     >
                         g<MiddleDot isSmall />b
-                    </Link>
+                    </ConditionalLink>
                 </div>
                 {!isMenu && <NavigationOptions />}
                 {isMenu && (

@@ -54,13 +54,19 @@ function ContactFooter(props: ContactFooterProps) {
                     href={LINKEDIN_URL}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Opens Gillian's Linkedin page in new tab"
                 >
                     <LinkedinIcon
                         width={iconDimension}
                         height={iconDimension}
                     />
                 </a>
-                <a href={X_URL} target="_blank" rel="noopener noreferrer">
+                <a
+                    href={X_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Opens Gillian's X/Twitter page in new tab"
+                >
                     <XIcon width={iconDimension} height={iconDimension} />
                 </a>
                 <EmailLink

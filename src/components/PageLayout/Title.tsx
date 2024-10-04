@@ -26,11 +26,11 @@ function Title(props: TitleProps) {
         <>
             <BackButton link={backButtonLink} />
             <div css={CSS_TITLE_WITH_BACK_BUTTON}>
-                <h3 css={CSS_PAGE_TITLE}>{title}</h3>
+                <h1 css={CSS_PAGE_TITLE}>{title}</h1>
             </div>
         </>
     ) : (
-        <h3 css={CSS_PAGE_TITLE}>{title}</h3>
+        <h1 css={CSS_PAGE_TITLE}>{title}</h1>
     );
 }
 
