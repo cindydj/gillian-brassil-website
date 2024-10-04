@@ -47,12 +47,14 @@ function TimelineEvent(props: TimelineEventProps) {
     return (
         <div css={CSS_CONTENT}>
             <a
+                id={`timeline-event-${url}`}
                 css={CSS_WORKPLACE_NAME_LINK}
                 href={url}
                 target="_blank"
                 rel="noreferrer noopener"
                 onMouseEnter={setHoveredIndexToCurrent}
                 onMouseLeave={resetHoveredIndex}
+                aria-label={`${name} in new tab`}
             >
                 <div
                     css={CSS_WORKPLACE_NAME}

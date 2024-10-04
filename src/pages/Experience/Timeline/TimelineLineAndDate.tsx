@@ -99,7 +99,7 @@ function TimelineLineAndDate(props: TimelineLineAndDateProps) {
             <div
                 css={css`
                     ${CSS_DATE};
-                    color: ${theme.colors.neutral.grey_4};
+                    color: ${theme.colors.neutral.grey_5};
                     font-family: ${theme.fonts.text};
 
                     @media screen and (max-width: ${theme.breakpoints.horizontal
@@ -110,6 +110,7 @@ function TimelineLineAndDate(props: TimelineLineAndDateProps) {
                 style={{
                     right: `calc(100% + ${horizontalGap})`,
                 }}
+                aria-label={`${displayedStartDate} to ${displayedEndDate}`}
             >
                 {displayedStartDate} -
                 <br />
@@ -121,6 +122,10 @@ function TimelineLineAndDate(props: TimelineLineAndDateProps) {
                 rel="noreferrer noopener"
                 onMouseEnter={setHoveredIndexToCurrent}
                 onMouseLeave={resetHoveredIndex}
+                aria-labelledby={`timeline-event-${url}`}
+                // This link is hidden and not focusable because we have a duplicate link in TimelineEvent.tsx.
+                aria-hidden="true"
+                tabIndex={-1}
             >
                 <div
                     css={CSS_NODE}

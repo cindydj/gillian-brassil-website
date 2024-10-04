@@ -35,6 +35,7 @@ const CSS_VOLUME_ICON = css({
 });
 
 const CSS_TITLE = css({
+    color: 'white',
     fontWeight: 'bold',
     margin: 0,
     fontSize: '5vw',
@@ -85,7 +86,7 @@ function Banner() {
         >
             <div css={CSS_BANNER_TEXT}>
                 <div css={CSS_NAME}>
-                    <div
+                    <h1
                         css={CSS_TITLE}
                         style={{
                             fontFamily: theme.fonts.header,
@@ -99,7 +100,7 @@ function Banner() {
                         an bras
                         <MiddleDot />
                         sil
-                    </div>
+                    </h1>
                     <VolumeIcon
                         css={CSS_VOLUME_ICON}
                         fill={theme.colors.text.light}

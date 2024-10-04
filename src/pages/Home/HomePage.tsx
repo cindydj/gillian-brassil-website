@@ -47,6 +47,11 @@ const CSS_MOBILE_WRAPPER = css({
     flex: 1,
 });
 
+const CSS_NAME = css({
+    display: 'block',
+    fontSize: '3.8rem',
+});
+
 const CSS_SUBTITLE = css({
     marginTop: '1rem',
     fontWeight: 'bold',
@@ -91,15 +96,17 @@ function HomePage() {
         >
             <div css={CSS_MOBILE_WRAPPER}>
                 {/* 411px is the smallest width where the name fits on one line. */}
-                <title
+                <h1
+                    css={CSS_NAME}
                     style={{
+                        color: theme.colors.primary,
                         fontSize: isScreenVerySmallBoolean
                             ? '2.5rem'
                             : '3.8rem',
                     }}
                 >
                     Gillian Brassil
-                </title>
+                </h1>
                 <div
                     css={CSS_SUBTITLE}
                     style={{
