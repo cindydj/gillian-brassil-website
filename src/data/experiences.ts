@@ -10,7 +10,7 @@ export type ExperiencesType = {
 export const EXPERIENCES: ExperiencesType = [
     {
         name: 'McClatchy',
-        url: 'https://www.sacbee.com/profile/252266833',
+        url: 'https://www.sacbee.com/profile/252266833/gillian-brassil',
         role: 'National Politics Correspondent',
         startDate: 'July 2021',
         endDate: 'present',
