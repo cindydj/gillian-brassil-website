@@ -127,7 +127,7 @@ function Banner() {
                         fontFamily: theme.fonts.header,
                     }}
                 >
-                    writer, multimedia reporter, political correspondant
+                    Multimedia reporter and writer
                 </div>
             </div>
             <img

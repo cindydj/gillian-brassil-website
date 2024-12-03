@@ -36,16 +36,14 @@ function AboutPage() {
                     width={isSmallScreen ? '200rem' : '400rem'}
                     alt="Gillian headshot"
                 />
-                Gillian Rose Brassil is a national political correspondent in
-                Washington D.C. for McClatchy's five California papers: The
-                Sacramento Bee, Fresno Bee, Modesto Bee, San Luis Obispo Tribune
-                and Merced Sun-Star.
+                Gillian Rose Brassil reports on securities litigation at
+                Bloomberg Law. She lives in Washington, DC.
                 <br />
                 <br />
-                Prior to joining McClatchy, Brassil was a sports reporting
-                fellow at The New York Times. She graduated from Stanford
-                University with a Master's in Journalism and a Bachelor's in
-                Communication in 2019.
+                Previously, she covered federal politics for McClatchy's
+                California papers. She graduated from Stanford University with a
+                Master's in Journalism and a Bachelor's in Communication in
+                2019.
                 <br />
                 <br />
                 In her free time, she practices artistic swimming, writes (short

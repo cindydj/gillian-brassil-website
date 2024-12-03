@@ -62,7 +62,7 @@ const CSS_PRIMARY_BUTTON = css({
 });
 
 const CSS_PRIMARY_BUTTON_FOR_SMALL_SCREEN = css({
-    marginTop: '1rem',
+    marginTop: '1.5rem',
 });
 
 function HomePage() {
@@ -116,7 +116,7 @@ function HomePage() {
                             : '2.25rem',
                     }}
                 >
-                    National political correspondent
+                    Bloomberg Law reporter
                 </div>
                 {shouldHomePageButtonBeShown(
                     screenSizeHorizontal,
@@ -140,8 +140,8 @@ function HomePage() {
         <PageLayout fullWidthChildren={<Banner />} isContentCentered isMainPage>
             <div css={CSS_INTRO_WRAPPER}>
                 <div css={CSS_INTRO_BLURB}>
-                    Gillian is a national political correspondent in Washington
-                    D.C., relentlessly{' '}
+                    Gillian is a Bloomberg Law reporter in Washington, DC,
+                    relentlessly{' '}
                     <span style={emphasisStyle}>pursuing the truth</span> and
                     holding power to account.
                 </div>
