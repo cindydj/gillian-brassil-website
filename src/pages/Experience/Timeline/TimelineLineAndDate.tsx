@@ -116,21 +116,44 @@ function TimelineLineAndDate(props: TimelineLineAndDateProps) {
                 <br />
                 {displayedEndDate}&nbsp;&nbsp;
             </div>
-            <a
-                href={url}
-                target="_blank"
-                rel="noreferrer noopener"
-                onMouseEnter={setHoveredIndexToCurrent}
-                onMouseLeave={resetHoveredIndex}
-                aria-labelledby={`timeline-event-${url}`}
-                // This link is hidden and not focusable because we have a duplicate link in TimelineEvent.tsx.
-                aria-hidden="true"
-                tabIndex={-1}
-            >
+            {url ? (
+                <a
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    onMouseEnter={setHoveredIndexToCurrent}
+                    onMouseLeave={resetHoveredIndex}
+                    aria-labelledby={`timeline-event-${url}`}
+                    // This link is hidden and not focusable because we have a duplicate link in TimelineEvent.tsx.
+                    aria-hidden="true"
+                    tabIndex={-1}
+                >
+                    <div
+                        css={CSS_NODE}
+                        style={{
+                            backgroundColor: theme.colors.primary,
+                        }}
+                        className="timeline-node"
+                    >
+                        {/* Draw an extra circle to highlight the currently hovered event. */}
+                        {isSelected && (
+                            <div
+                                css={CSS_CURRENT_WORKPLACE_NODE}
+                                style={{
+                                    border: `0.18rem ${theme.colors.primary} solid`,
+                                }}
+                            />
+                        )}
+                    </div>
+                </a>
+            ) : (
                 <div
                     css={CSS_NODE}
+                    onMouseEnter={setHoveredIndexToCurrent}
+                    onMouseLeave={resetHoveredIndex}
                     style={{
                         backgroundColor: theme.colors.primary,
+                        cursor: 'auto',
                     }}
                     className="timeline-node"
                 >
@@ -144,7 +167,7 @@ function TimelineLineAndDate(props: TimelineLineAndDateProps) {
                         />
                     )}
                 </div>
-            </a>
+            )}
         </div>
     );
 }

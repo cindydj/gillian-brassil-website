@@ -46,26 +46,37 @@ function TimelineEvent(props: TimelineEventProps) {
 
     return (
         <div css={CSS_CONTENT}>
-            <a
-                id={`timeline-event-${url}`}
-                css={CSS_WORKPLACE_NAME_LINK}
-                href={url}
-                target="_blank"
-                rel="noreferrer noopener"
-                onMouseEnter={setHoveredIndexToCurrent}
-                onMouseLeave={resetHoveredIndex}
-                aria-label={`${name} in new tab`}
-            >
+            {url ? (
+                <a
+                    id={`timeline-event-${url}`}
+                    css={CSS_WORKPLACE_NAME_LINK}
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    onMouseEnter={setHoveredIndexToCurrent}
+                    onMouseLeave={resetHoveredIndex}
+                    aria-label={`${name} in new tab`}
+                >
+                    <div
+                        css={CSS_WORKPLACE_NAME}
+                        style={{
+                            color: theme.colors.primary,
+                            textDecoration: 'underline',
+                        }}
+                    >
+                        {name}
+                    </div>
+                </a>
+            ) : (
                 <div
                     css={CSS_WORKPLACE_NAME}
                     style={{
                         color: theme.colors.primary,
-                        textDecoration: 'underline',
                     }}
                 >
                     {name}
                 </div>
-            </a>
+            )}
             {!!role && (
                 <h2
                     style={{

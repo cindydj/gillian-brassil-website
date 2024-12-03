@@ -9,11 +9,18 @@ export type ExperiencesType = {
 
 export const EXPERIENCES: ExperiencesType = [
     {
+        name: 'Bloomberg Law',
+        url: '',
+        role: 'Securities Litigation Reporter',
+        startDate: 'December 2024',
+        endDate: 'present',
+    },
+    {
         name: 'McClatchy',
         url: 'https://www.sacbee.com/profile/252266833/gillian-brassil',
         role: 'National Politics Correspondent',
         startDate: 'July 2021',
-        endDate: 'present',
+        endDate: 'November 2024',
     },
     {
         name: 'The New York Times',
