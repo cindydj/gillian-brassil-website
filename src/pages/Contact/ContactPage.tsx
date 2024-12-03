@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import PageLayout from '../../components/PageLayout/PageLayout';
-import { LINKEDIN_URL, X_URL } from '../../data/contact';
+import { BLUESKY_URL, LINKEDIN_URL, X_URL } from '../../data/contact';
 import GILLIAN_CONTACT_PHOTO from '../../assets/images/gillian_and_cubby.webp';
 import { css } from '@emotion/react';
 import {
@@ -28,8 +28,9 @@ function ContactPage() {
     return (
         <PageLayout title="Contact" isContentCentered>
             <span>
-                Connect with me on <a href={LINKEDIN_URL}>LinkedIn</a> or follow
-                me on X at <a href={X_URL}>@Gillian_Brassil</a>.
+                Connect with me on <a href={LINKEDIN_URL}>LinkedIn</a>, follow
+                me on X at <a href={X_URL}>@Gillian_Brassil</a> or Bluesky at{' '}
+                <a href={BLUESKY_URL}>@gbrassil.bsky.social</a>.
                 <br />
                 <br />
                 You can also reach me via <EmailLink text="email" />!

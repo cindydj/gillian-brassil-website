@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react';
-import { ReactComponent as XIconColored } from '../../assets/icons/X.svg';
-import { ReactComponent as XIconBlack } from '../../assets/icons/X_black.svg';
-import { ReactComponent as LinkedinIconColored } from '../../assets/icons/linkedin.svg';
-import { ReactComponent as LinkedinIconBlack } from '../../assets/icons/linkedin_black.svg';
-import { LINKEDIN_URL, X_URL } from '../../data/contact';
+import { ReactComponent as XIconWithRgb } from '../../assets/icons/X.svg';
+import { ReactComponent as XIconGrayscale } from '../../assets/icons/X_black.svg';
+import { ReactComponent as LinkedinIconWithRgb } from '../../assets/icons/linkedin.svg';
+import { ReactComponent as LinkedinIconGrayscale } from '../../assets/icons/linkedin_black.svg';
+import { ReactComponent as BlueskyIconGrayscale } from '../../assets/icons/bluesky_black.svg';
+import { ReactComponent as BlueskyIconWithRgb } from '../../assets/icons/bluesky.svg';
+import { BLUESKY_URL, LINKEDIN_URL, X_URL } from '../../data/contact';
 import EmailLink from '../EmailLink/EmailLink';
 
 const ICON_DIMENSION_LARGE = '3rem';
@@ -37,8 +39,11 @@ function ContactFooter(props: ContactFooterProps) {
     const iconDimension = isMainPage
         ? ICON_DIMENSION_LARGE
         : ICON_DIMENSION_SMALL;
-    const LinkedinIcon = isMainPage ? LinkedinIconColored : LinkedinIconBlack;
-    const XIcon = isMainPage ? XIconColored : XIconBlack;
+    const LinkedinIcon = isMainPage
+        ? LinkedinIconWithRgb
+        : LinkedinIconGrayscale;
+    const XIcon = isMainPage ? XIconWithRgb : XIconGrayscale;
+    const BlueskyIcon = isMainPage ? BlueskyIconWithRgb : BlueskyIconGrayscale;
 
     return (
         <div css={CSS_FOOTER}>
@@ -68,6 +73,14 @@ function ContactFooter(props: ContactFooterProps) {
                     aria-label="Opens Gillian's X/Twitter page in new tab"
                 >
                     <XIcon width={iconDimension} height={iconDimension} />
+                </a>
+                <a
+                    href={BLUESKY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Opens Gillian's Bluesky page in new tab"
+                >
+                    <BlueskyIcon width={iconDimension} height={iconDimension} />
                 </a>
                 <EmailLink
                     dimension={iconDimension}
