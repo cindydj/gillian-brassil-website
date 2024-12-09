@@ -10,7 +10,7 @@ export type ExperiencesType = {
 export const EXPERIENCES: ExperiencesType = [
     {
         name: 'Bloomberg Law',
-        url: '',
+        url: 'https://news.bloomberglaw.com/author/gillian-r.-brassil-24326208',
         role: 'Securities Litigation Reporter',
         startDate: 'December 2024',
         endDate: 'present',
